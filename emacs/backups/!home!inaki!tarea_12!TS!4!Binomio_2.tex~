@@ -1,0 +1,22 @@
+\documentclass{article}
+
+\usepackage{amsmath}
+\usepackage[spanish]{babel}
+
+\author{Iñaki Ulibarri}
+\date{\today}
+\title{Binomios 2}
+
+\begin{document}
+\maketitle \newpage
+
+\begin{itemize}
+\item $(2a^2 +3b^4)^8$
+  \begin{align*}
+    (2a^2 +3b^4)^8 &= \sum_{n=0}^{8} \binom{8}{n} \cdot 2a^{2(8-n)} \cdot 3b^{4n} \\
+    &= 256a^{16} + 3072a^{14}b^4 + 16128a^{12}b^8 + 48384a^{10}b^{12} + 90720a^8b^{16} \\
+    &  108864a^6b^{20} + 81648a^4b^{24} + 34992a^2b^{28} +6561b^{32}
+  \end{align*}
+\item $(x^3 - y^4)^{10}$
+\end{itemize}
+\end{document}

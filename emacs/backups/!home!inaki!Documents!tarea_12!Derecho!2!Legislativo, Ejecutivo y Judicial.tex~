@@ -1,0 +1,88 @@
+\documentclass[18pts]{article}
+\usepackage[spanish]{babel}
+\usepackage{setspace}
+\spacing{1.5}
+
+\title{Poder Lesgislativo, Ejecutivo y Judicial}
+\author{Iñaki Ulibarri Utrilla}
+
+\begin{document}
+\maketitle
+\pagenumbering{roman}
+\newpage
+
+\section{Secretarías de Estado}
+El poder ejecutivo tiene a su dispocisión una serie de secretarías (lo que en el extranjero uno
+llamaría ministerios) para apoyar en el cumplimiento de las reponsabilidades del estado: proveer
+de educación, salud, seguridad, servicios, etc...
+
+Hay un total de veintiun secretarías, las cuales son:
+\begin{itemize}
+  \item Secretaría de Educación Pública (SEP)
+  \item Secretaría de Relaciones Exteriores (SRE)
+  \item Secretaría de Medio Ambiente y Recursos Naturales (SEMARNAT)
+  \item Secretaría de la Función Pública (SFP)
+  \item Secretaría de la Defensa Nacional (SEDENA)
+  \item Consejo Nacional para el Desarrollo y la Inclusión de las Personas con Discapacidad (CONADIS)
+  \item Secretaría del Trabajo y Previsión Social (STPS)
+  \item Secretaría de Turismo (SECTUR)
+  \item Secretaría de Marina (SEMAR)
+  \item Secretaría de Economía (SE)
+  \item Secretaría de Energía (SENER)
+  \item Secretaría de Desarrollo Agrario, Territorial y Urbano (SEDATU)
+  \item Consejería Jurídica del Ejecutivo Federal (CJEF)
+  \item Comisión Nacional para el Desarrollo de los Pueblos Indígenas (CDI)
+  \item Secretaría de Comunicaciones y Transportes (SCT)
+  \item Instituto Nacional de las Mujeres (INMUJERES)
+  \item Secretaría de Salud (SALUD)
+  \item Secretaría de Desarrollo Social (SEDESOL)
+  \item Secretaría de Hacienda y Crédito Público (SHCP)
+  \item Procuraduría General de la República (PGR)
+  \item Instituto de Seguridad y Servicios Sociales de los Trabajadores del Estado (ISSSTE)
+  \item Instituto Nacional de Migración (INM)
+  \item Secretaría de Gobernación (SEGOB)
+  \item Secretaría de Agricultura, Ganadería, Desarrollo Rural, Pesca y Alimentación (SAGARPA)
+\end{itemize}
+Estas secretarías se encargan de la organización de sus respectivos rubros y se coordinan con
+el presidente de la república para la organización del estado y seguir con las visiones del
+gobierno en turno. Se puede decir que las dependencias de gobierno son las ramas del poder
+ejecutivo, son extensiones que permiten y facilitan el funcionamiento del estado a partir de
+la división de tareas y especialización en cumplirlas.
+
+\section{Los Tres Poderes del Estado}
+El estado se divide en tres poderes: Ejecutivo, Legislativo y Judicial. Estos se dividen
+el poder de acción violenta del estado, la capacidad de generar jurisprudencia y de iniciar
+y revisar las iniciativas de leyes. Las facultades y obligaciones de éstos están establecidos
+en la CPEUM de esta forma:
+
+\subsection{Ejecutivo}
+Artículos constitucionales del 80º al 93º, establece los poderes, obligaciones, requisitos y periodos de
+servicio del Presidente de los Estados Unidos Mexicanos, de forma notable el artículo 80º establece que
+«Se deposita el ejercicio del Supremo Poder Ejecutivo de la Unión en un solo individuo, que se denominará
+"Presidente de los Estados Unidos Mexicanos"».
+
+El Poder Ejecutivo tiene la facultad de revisión de leyes; representación del país en tratados
+internacionales, dirigir la política exterior y declarar la pocisión del gobierno frente a problemáticas
+exteriores; ser el jefe máximo de las fuerzas armadas, designar altos rangos militares y declarar la
+guerra con la previa aprobación del senado; designar cónsules, embajadores y secretarios; optar por
+gobiernos de coalición, presentar candidatos para la Suprema Corte de Justicia, dar privilegios a
+individuos que se prueben como notables en sus campos; etc...
+
+%% TODO: terminar el poder Legislativo y Judicial
+\subsection{Legislativo}
+\subsection{Judicial}
+
+\section{Fuentes}
+\begin{itemize}
+%% TODO: expandir las fuentes a su forma completa
+\item https://edomex.gob.mx/sites/edomex.gob.mx/files/files/Organigrama/CIRCULAR-SEC-08.pdf
+\item https://www.archivo.cdmx.gob.mx/gobierno/marco-juridico/secretarias
+\item https://www.constitucionpolitica.mx/titulo-3-division-poderes/capitulo-3-poder-ejecutivo
+\item https://www.constitucionpolitica.mx/titulo-3-division-poderes/capitulo-3-poder-ejecutivo/articulo-80-presidente-mexico
+\item https://www.constitucionpolitica.mx/titulo-3-division-poderes/capitulo-3-poder-ejecutivo/articulo-89-facultades-obligaciones-presidente
+  
+
+\end{itemize}
+
+
+\end{document}

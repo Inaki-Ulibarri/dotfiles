@@ -1,0 +1,21 @@
+(* structs in C *)
+
+type PType = TNormal | TFire | TWater | TGhost
+type mon = { name: string;
+             hp: int;
+             ptype: ptype}
+
+let starter = {
+    name = "Charmander";
+    hp = 28;
+    ptype = TFire
+  }
+
+let starterEvolve =  {
+    starter with
+    hp = 35;
+  }
+                
+                
+             
+           

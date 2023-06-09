@@ -1,0 +1,70 @@
+#ifndef __LINEAR_H__
+#define __LINEAR_H__
+#endif
+
+#ifndef __MATH_H__
+#include <math.h>
+#endif
+
+#ifndef __ASSERT_H__
+#include <assert.h>
+#endif
+
+typedef struct  {
+       	float x;
+	float y;	       
+} Point;
+
+typedef struct {
+	float m;
+	float c;
+} Line;
+
+
+float EucDist(Point p1, Point p2)
+{
+	if (p2.x < p1.x) {
+		Point tmp = { p1.x, p1.y };
+		p1.x = p2.x; p1.y = p2.y;
+		p2.x = tmp.x; p2.y = tmp.y;
+	}
+
+	float dy = p2.y - p1.y;
+	float dx = p2.x - p1.x;
+
+	return sqrt(fabs(dy*dy + dx*dx)); 
+}
+
+float ManDist(Point p1, Point p2)
+{
+	if (p2.x < p1.x) {
+		Point tmp = { p1.x, p1.y };
+		p1.x = p2.x; p1.y = p2.y;
+		p2.x = tmp.x; p2.y = tmp.y;
+	}
+	
+	float dy = p2.y - p1.y;
+	float dx = p2.x - p1.x;
+
+	return fabs(dy) + fabs(dx); 
+}
+
+Line PointToLine(Point p1, Point p2) {
+	float m = 0.0F;
+	float c = 0.0F;
+	
+	if (p2.x < p1.x) {
+		Point tmp = { p1.x, p1.y };
+		p1.x = p2.x; p1.y = p2.y;
+		p2.x = tmp.x; p2.y = tmp.y;
+	}
+	m = (p2.x == p1.x) ?
+		INFINITY :
+		(p2.y - p1.y) / (p2.x - p1.x);
+	c = p1.y - m*p1.x;
+
+	return (Line)  {
+		m,
+		c
+	};
+}

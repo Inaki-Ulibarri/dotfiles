@@ -1,0 +1,16 @@
+\date{\today}
+\author{Iñaki Ulibarri Utrilla}
+
+\usepackage{amsmath, amsymb}
+\usepackage[spanish]{babel}
+
+
+\begin{document}
+\begin{itemize}
+\item Séptimo término de $(3x^3 + 4y^4)^{10}$
+  \begin{align*}
+    &\therefore \binom{10}{7 - 1} \cdot (3x^3)^{10-7+1} \cdot (4y^4)^{7-1} \\
+    &= 69672960 x^{18} y^{24}
+  \end{align*}
+\end{itemize}
+\end{document}

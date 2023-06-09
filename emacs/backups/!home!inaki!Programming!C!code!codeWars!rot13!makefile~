@@ -1,0 +1,9 @@
+CC = clang
+CFLAGS = -Wall -Wextra -pedantic -g
+CLIBS = -lcriterion
+
+main: main.c
+	$(CC) $(CFLAGS) $(CLIBS) -o $@ $<
+
+test: main
+	./main

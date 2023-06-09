@@ -1,0 +1,262 @@
+;;; -*- coding: utf-8 -*-
+(("/home/inaki/.config/emacs/init.el" . 365)
+ ("/home/inaki/Programming/Projs/Euler-Project/11/"
+  (dired-filename . "/home/inaki/Programming/Projs/Euler-Project/11/11.jl"))
+ ("/home/inaki/Programming/Projs/Euler-Project/11/11.jl" . 1761)
+ ("/home/inaki/.config/emacs/elpa/julia-repl-20230529.943/julia-repl-autoloads.el" . 1009)
+ ("/home/inaki/Programming/Projs/Euler-Project/"
+  (dired-filename . "/home/inaki/Programming/Projs/Euler-Project/11"))
+ ("/home/inaki/Programming/Projs/Euler-Project/10/10.jl" . 564)
+ ("/home/inaki/foo.jl" . 43)
+ ("/home/inaki/Programming/Projs/Euler-Project/10/"
+  (dired-filename . "/home/inaki/Programming/Projs/Euler-Project/10/10.jl"))
+ ("/home/inaki/Programming/Projs/Euler-Project/10/10.hs" . 210)
+ ("/home/inaki/Programming/Projs/Euler-Project/7/7.hs" . 1227)
+ ("/home/inaki/.config/emacs/"
+  (dired-filename . "/home/inaki/.config/emacs/foo.hs"))
+ ("/home/inaki/.config/emacs/snippets/haskell-mode/"
+  (dired-filename . "/home/inaki/.config/emacs/snippets/haskell-mode/haskell-mode"))
+ ("/home/inaki/.config/emacs/snippets/haskell-mode/haskell-mode" . 50)
+ ("/home/inaki/.config/emacs/snippets/"
+  (dired-filename . "/home/inaki/.config/emacs/snippets/haskell-mode"))
+ ("/home/inaki/Programming/Projs/Euler-Project/9/9.hs" . 293)
+ ("/home/inaki/Programming/Projs/Euler-Project/9/"
+  (dired-filename . "/home/inaki/Programming/Projs/Euler-Project/9/9.hs"))
+ ("/home/inaki/Programming/Projs/Lisp/Racket/"
+  (dired-filename . "/home/inaki/Programming/Projs/Lisp/Racket/fizzbuzz.rkt"))
+ ("/home/inaki/Programming/Projs/Lisp/Racket/fizzbuzz.rkt" . 313)
+ ("/usr/share/emacs/27.1/lisp/progmodes/compile.el.gz" . 30027)
+ ("/home/inaki/"
+  (dired-filename . "/home/inaki/foo.ml"))
+ ("/home/inaki/Programming/Projs/"
+  (dired-filename . "/home/inaki/Programming/Projs/Euler-Project"))
+ ("/home/inaki/Programming/Projs/Euler-Project/7/"
+  (dired-filename . "/home/inaki/Programming/Projs/Euler-Project/7/7.hs"))
+ ("/home/inaki/tarea_12/Mate/2/trabajo asíncrono/TrabajoAsíncrono_ULIBARRI_IÑAKI.tex" . 248)
+ ("/home/inaki/Programming/Projs/Euler-Project/2/"
+  (dired-filename . "/home/inaki/Programming/Projs/Euler-Project/2/2.hs"))
+ ("/home/inaki/Programming/Projs/Euler-Project/1/"
+  (dired-filename . "/home/inaki/Programming/Projs/Euler-Project/1/1.hs"))
+ ("/home/inaki/Programming/Projs/Euler-Project/6/" . 97)
+ ("/home/inaki/Programming/Projs/Euler-Project/5/"
+  (dired-filename . "/home/inaki/Programming/Projs/Euler-Project/5/5.jl"))
+ ("/home/inaki/Programming/Projs/Lisp/"
+  (dired-filename . "/home/inaki/Programming/Projs/Lisp/basic.lisp"))
+ ("/home/inaki/Programming/Projs/OCaml/"
+  (dired-filename . "/home/inaki/Programming/Projs/OCaml/code"))
+ ("/home/inaki/Programming/Projs/Julia/"
+  (dired-filename . "/home/inaki/Programming/Projs/Julia/code_wars"))
+ ("/home/inaki/Programming/Projs/Haskell/"
+  (dired-filename . "/home/inaki/Programming/Projs/Haskell/learn-you-a-haskell.hs"))
+ ("/home/inaki/Programming/Projs/C/"
+  (dired-filename . "/home/inaki/Programming/Projs/C/clasesFernan"))
+ ("/home/inaki/Programming/Projs/Ruby/"
+  (dired-filename . "/home/inaki/Programming/Projs/Ruby/foo.rb"))
+ ("/home/inaki/Programming/Projs/Python/"
+  (dired-filename . "/home/inaki/Programming/Projs/Python/fast_api"))
+ ("/home/inaki/Programming/Projs/Euler-Project/3/"
+  (dired-filename . "/home/inaki/Programming/Projs/Euler-Project/3/3.hs"))
+ ("/home/inaki/Programming/Projs/Euler-Project/3/3.hs" . 509)
+ ("/home/inaki/Programming/Projs/Euler-Project/2/2.hs" . 305)
+ ("/home/inaki/Programming/Projs/Euler-Project/1/1.hs" . 132)
+ ("/home/inaki/Programming/Projs/Euler-Project/6/6.hs" . 150)
+ ("/home/inaki/Programming/Projs/Euler-Project/5/5.jl" . 182)
+ ("/home/inaki/.config/awesome/rc.lua" . 32847)
+ ("/home/inaki/Programming/"
+  (dired-filename . "/home/inaki/Programming/Projs"))
+ ("/home/inaki/Programming/Projs/Haskell/learn-you-a-haskell.hs" . 4958)
+ ("/home/inaki/Programming/Projs/Euler-Project/1/2.hs" . 163)
+ ("/home/inaki/tarea_12/TS/4/ejercicios_combinados.tex" . 3819)
+ ("/home/inaki/tarea_12/TS/4/"
+  (dired-filename . "/home/inaki/tarea_12/TS/4/Binomio"))
+ ("/home/inaki/tarea_12/TS/3/tareas/demostraciones.tex" . 249)
+ ("/home/inaki/Programming/Projs/Julia/euler_project/circular_primes/"
+  (dired-filename . "/home/inaki/Programming/Projs/Julia/euler_project/circular_primes/main.jl"))
+ ("/home/inaki/Programming/Projs/Julia/euler_project/counting_fractions/"
+  (dired-filename . "/home/inaki/Programming/Projs/Julia/euler_project/counting_fractions/main.jl"))
+ ("/home/inaki/Programming/Projs/Julia/euler_project/"
+  (dired-filename . "/home/inaki/Programming/Projs/Julia/euler_project/prime_replacement"))
+ ("/home/inaki/Programming/Projs/Julia/euler_project/prime_replacement/" . 119)
+ ("/home/inaki/Programming/Projs/Julia/euler_project/prime_replacement/main.jl" . 500)
+ ("/home/inaki/Programming/Projs/Julia/euler_project/circular_primes/main.jl" . 314)
+ ("/home/inaki/Programming/Projs/Julia/code_wars/"
+  (dired-filename . "/home/inaki/Programming/Projs/Julia/code_wars/playing_with_digits.jl"))
+ ("/home/inaki/Programming/Projs/Julia/code_wars/playing_with_digits.jl/"
+  (dired-filename . "/home/inaki/Programming/Projs/Julia/code_wars/playing_with_digits.jl/playing_with_digits.jl"))
+ ("/home/inaki/Programming/Projs/Julia/code_wars/playing_with_digits.jl/playing_with_digits.jl" . 281)
+ ("/home/inaki/Programming/Projs/Julia/code_wars/morse_code.jl/mc_1.jl" . 3416)
+ ("/home/inaki/Programming/Projs/Julia/code_wars/morse_code.jl/"
+  (dired-filename . "/home/inaki/Programming/Projs/Julia/code_wars/morse_code.jl/mc_1.jl"))
+ ("/home/inaki/Programming/Projs/Julia/euler_project/coins_sums.jl" . 977)
+ ("/home/inaki/Trabajo/SoFine/backend/app/app/api/api_v1/endpoints/"
+  (dired-filename . "/home/inaki/Trabajo/SoFine/backend/app/app/api/api_v1/endpoints/transactions.py"))
+ ("/home/inaki/Trabajo/SoFine/backend/app/app/repositories/transaction_repository.py" . 1036)
+ ("/home/inaki/Trabajo/SoFine/backend/app/app/api/api_v1/endpoints/transactions.py" . 821)
+ ("/home/inaki/Trabajo/SoFine/backend/app/app/api/api_v1/endpoints/login.py" . 1697)
+ ("/home/inaki/Trabajo/"
+  (dired-filename . "/home/inaki/Trabajo/SoFine"))
+ ("/home/inaki/Trabajo/SoFine/"
+  (dired-filename . "/home/inaki/Trabajo/SoFine/backend"))
+ ("/home/inaki/Trabajo/SoFine/backend/"
+  (dired-filename . "/home/inaki/Trabajo/SoFine/backend/app"))
+ ("/home/inaki/Trabajo/SoFine/backend/app/"
+  (dired-filename . "/home/inaki/Trabajo/SoFine/backend/app/app"))
+ ("/home/inaki/Trabajo/SoFine/backend/app/app/"
+  (dired-filename . "/home/inaki/Trabajo/SoFine/backend/app/app/repositories"))
+ ("/home/inaki/Trabajo/SoFine/backend/app/app/repositories/"
+  (dired-filename . "/home/inaki/Trabajo/SoFine/backend/app/app/repositories/transaction_repository.py"))
+ ("/home/inaki/Trabajo/SoFine/backend/app/app/crud/base.py" . 1075)
+ ("/home/inaki/Trabajo/SoFine/backend/app/app/schemas/transaction.py" . 848)
+ ("/home/inaki/Trabajo/SoFine/backend/app/app/services/"
+  (dired-filename . "/home/inaki/Trabajo/SoFine/backend/app/app/services/transaction_service.py"))
+ ("/home/inaki/Trabajo/SoFine/backend/app/app/schemas/" . 1162)
+ ("/home/inaki/Trabajo/SoFine/backend/app/app/crud/"
+  (dired-filename . "/home/inaki/Trabajo/SoFine/backend/app/app/crud/base.py"))
+ ("/home/inaki/Videos/"
+  (dired-filename . "/home/inaki/Videos/movies"))
+ ("/home/inaki/Videos/movies/"
+  (dired-filename . "/home/inaki/Videos/movies/Smiling.Friends.S01.720p.WEBRip.AAC2.0.x264-BAE[eztv.re]"))
+ ("/home/inaki/Videos/movies/Smiling.Friends.S01.720p.WEBRip.AAC2.0.x264-BAE[eztv.re]/"
+  (dired-filename . "/home/inaki/Videos/movies/Smiling.Friends.S01.720p.WEBRip.AAC2.0.x264-BAE[eztv.re]/Smiling.Friends.S01E01.Pilot.720p.WEBRip.x264-BAE[eztv.re].mkv"))
+ ("/home/inaki/Trabajo/SoFine/README.md" . 2174)
+ ("/home/inaki/Trabajo/SoFine/backend/app/app/db/"
+  (dired-filename . "/home/inaki/Trabajo/SoFine/backend/app/app/db/init_db.py"))
+ ("/home/inaki/Programming/Langs/"
+  (dired-filename . "/home/inaki/Programming/Langs/julia-1.8.5"))
+ ("/home/inaki/Programming/Projs/Python/fast_api/" . 97)
+ ("/home/inaki/Trabajo/SoFine/backend/app/app/api/deps.py" . 2496)
+ ("/home/inaki/Trabajo/SoFine/backend/app/app/db/session.py" . 2)
+ ("/home/inaki/Trabajo/SoFine/backend/app/app/repositories/user_repository.py" . 999)
+ ("/home/inaki/Trabajo/SoFine/backend/app/app/api/api_v1/endpoints/utils.py" . 2)
+ ("/home/inaki/Programming/Projs/Python/fast_api/request_body.py" . 458)
+ ("/home/inaki/Trabajo/SoFine/.env" . 901)
+ ("/home/inaki/tarea_12/TS/4/Binomio/"
+  (dired-filename . "/home/inaki/tarea_12/TS/4/Binomio/Binomio.tex"))
+ ("/home/inaki/tarea_12/TS/4/Binomio/Erésimo.tex" . 194)
+ ("/home/inaki/tarea_12/TS/3/"
+  (dired-filename . "/home/inaki/tarea_12/TS/3/tareas"))
+ ("/home/inaki/tarea_12/TS/"
+  (dired-filename . "/home/inaki/tarea_12/TS/4"))
+ ("/home/inaki/Zomboid/"
+  (dired-filename . "/home/inaki/Zomboid/Logs"))
+ ("/home/inaki/Downloads/"
+  (dired-filename . "/home/inaki/Downloads/305602469_1196856097546353_1766764765819327323_n.mp4"))
+ ("/home/inaki/tarea_12/Derecho/4/" . 82)
+ ("/home/inaki/tarea_12/Derecho/"
+  (dired-filename . "/home/inaki/tarea_12/Derecho/3"))
+ ("/home/inaki/tarea_12/Derecho/3/" . 80)
+ ("/home/inaki/tarea_12/Derecho/3/25_preguntas.md" . 4601)
+ ("/home/inaki/tarea_12/Física/"
+  (dired-filename . "/home/inaki/tarea_12/Física/3"))
+ ("/home/inaki/tarea_12/Física/3/"
+  (dired-filename . "/home/inaki/tarea_12/Física/3/motor_stirling.odt"))
+ ("/home/inaki/tarea_12/Física/3/sincrónica.md" . 3073)
+ ("/home/inaki/tarea_12/Derecho/4/Trabajo.org" . 210)
+ ("/home/inaki/tarea_12/Química/"
+  (dired-filename . "/home/inaki/tarea_12/Química/4"))
+ ("/home/inaki/tarea_12/Química/4/"
+  (dired-filename . "/home/inaki/tarea_12/Química/4/Nomenclaturas"))
+ ("/home/inaki/tarea_12/Química/4/Nomenclaturas/" . 96)
+ ("/home/inaki/tarea_12/Química/4/Nomenclaturas/ejercicio_nomenclatura.md" . 440)
+ ("/home/inaki/tarea_12/TS/3/tareas/"
+  (dired-filename . "/home/inaki/tarea_12/TS/3/tareas/demostraciones.tex"))
+ ("/home/inaki/Programming/Projs/Julia/Plots/Ejemplo/src/Gráfico.png" . 7)
+ ("/home/inaki/Programming/Projs/Julia/Plots/Ejemplo/src/foo.png" . 3)
+ ("/home/inaki/Programming/Projs/Julia/Plots/"
+  (dired-filename . "/home/inaki/Programming/Projs/Julia/Plots/Ejemplo"))
+ ("/home/inaki/Programming/Projs/Julia/Plots/Ejemplo/"
+  (dired-filename . "/home/inaki/Programming/Projs/Julia/Plots/Ejemplo/src"))
+ ("/home/inaki/Programming/Projs/Julia/Plots/Ejemplo/src/"
+  (dired-filename . "/home/inaki/Programming/Projs/Julia/Plots/Ejemplo/src/Ejemplo.jl"))
+ ("/home/inaki/Programming/Projs/Julia/Plots/Ejemplo/src/Ejemplo.jl" . 367)
+ ("/home/inaki/Zomboid/console.txt" . 1739265)
+ ("/home/inaki/Documents/tarea_12/Français/3/presentation/"
+  (dired-filename . "/home/inaki/Documents/tarea_12/Français/3/presentation/presentation.md"))
+ ("/home/inaki/Documents/tarea_12/Français/3/presentation/presentation.md" . 1788)
+ ("/home/inaki/Documents/tarea_12/TS/3/asincrónica/"
+  (dired-filename . "/home/inaki/Documents/tarea_12/TS/3/asincrónica/asincrónica.tex"))
+ ("/home/inaki/Documents/tarea_12/TS/3/asincrónica/asincrónica.tex" . 111)
+ ("/home/inaki/Documents/tarea_12/Français/3/presentation/makefile" . 116)
+ ("/home/inaki/Documents/tarea_12/Français/"
+  (dired-filename . "/home/inaki/Documents/tarea_12/Français/3"))
+ ("/home/inaki/Documents/tarea_12/Français/3/"
+  (dired-filename . "/home/inaki/Documents/tarea_12/Français/3/presentation"))
+ ("/home/inaki/Documents/tarea_12/TS/"
+  (dired-filename . "/home/inaki/Documents/tarea_12/TS/3"))
+ ("/home/inaki/Documents/tarea_12/TS/3/asincrónica/asincrónica.org" . 210)
+ ("/home/inaki/Documents/tarea_12/TS/3/"
+  (dired-filename . "/home/inaki/Documents/tarea_12/TS/3/asincrónica"))
+ ("/home/inaki/Documents/tarea_12/TS/3/asincrónica/makefile" . 65)
+ ("/home/inaki/Documents/tarea_12/Mate/2/trabajo asíncrono/TrabajoAsíncrono_ULIBARRI_IÑAKI.tex" . 1644)
+ ("/home/inaki/.config/awesome/themes/multicolor/wall.png" . 3)
+ ("/home/inaki/.config/awesome/themes/multicolor/wall-pers.png" . 3)
+ ("/home/inaki/.config/awesome/themes/multicolor/wall-og.png" . 3)
+ ("/home/inaki/.config/awesome/themes/multicolor/H_4.png" . 3)
+ ("/home/inaki/.config/awesome/themes/multicolor/1628844824397.jpg" . 614)
+ ("/home/inaki/Pictures/Wallpapers/"
+  (dired-filename . "/home/inaki/Pictures/Wallpapers/1628844824397.jpg"))
+ ("/home/inaki/.config/awesome/themes/multicolor/"
+  (dired-filename . "/home/inaki/.config/awesome/themes/multicolor/theme.lua"))
+ ("/home/inaki/.config/awesome/themes/multicolor/theme.lua" . 570)
+ ("/home/inaki/Pictures/4chan/anime/"
+  (dired-filename . "/home/inaki/Pictures/4chan/anime/1628215629329.jpg"))
+ ("/home/inaki/Documents/tarea_12/Mate/2/trabajo asíncrono/"
+  (dired-filename . "/home/inaki/Documents/tarea_12/Mate/2/trabajo asíncrono/TrabajoAsíncrono_ULIBARRI_IÑAKI.tex"))
+ ("/home/inaki/Documents/tarea_12/Mate/"
+  (dired-filename . "/home/inaki/Documents/tarea_12/Mate/2"))
+ ("/home/inaki/Documents/tarea_12/Mate/2/"
+  (dired-filename . "/home/inaki/Documents/tarea_12/Mate/2/trabajo asíncrono"))
+ ("/home/inaki/Documents/tarea_12/Mate/1/tarea2/ULIBARRI_IÑAKI_12B_TAREA.tex" . 73)
+ ("/home/inaki/Documents/tarea_12/TS/2/tarea_c(asíncrona)/tarea c.tex" . 240)
+ ("/home/inaki/Documents/tarea_12/TS/2/"
+  (dired-filename . "/home/inaki/Documents/tarea_12/TS/2/tarea_c(asíncrona)"))
+ ("/home/inaki/Documents/tarea_12/TS/2/tarea_c(asíncrona)/" . 106)
+ ("/usr/share/emacs/27.1/lisp/newcomment.el.gz" . 34775)
+ ("/home/inaki/.config/awesome/"
+  (dired-filename . "/home/inaki/.config/awesome/themes"))
+ ("/home/inaki/.config/awesome/themes/"
+  (dired-filename . "/home/inaki/.config/awesome/themes/multicolor"))
+ ("/home/inaki/.config/awesome/themes/powerarrow/"
+  (dired-filename . "/home/inaki/.config/awesome/themes/powerarrow/theme.lua"))
+ ("/home/inaki/.config/awesome/themes/powerarrow/theme.lua" . 17594)
+ ("/home/inaki/.config/awesome/themes/powerarrow/binclock.lua" . 3035)
+ ("/home/inaki/.config/awesome/themes/powerarrow/icons/"
+  (dired-filename . "/home/inaki/.config/awesome/themes/powerarrow/icons/titlebar"))
+ ("/home/inaki/.config/awesome/themes/powerarrow/wall.png" . 3)
+ ("/home/inaki/.config/awesome/themes/powerarrow/H_4.png" . 3)
+ ("/home/inaki/.config/awesome/themes/powerarrow-dark/wall-og.png" . 3)
+ ("/home/inaki/.config/awesome/themes/powerarrow-dark/wall.png" . 3)
+ ("/home/inaki/.config/awesome/themes/powerarrow-dark/powerarrow-dark"
+  (dired-filename . "/home/inaki/.config/awesome/themes/powerarrow-dark/wall-og.png"))
+ ("/home/inaki/.config/awesome/themes/powerarrow-dark/theme.lua" . 571)
+ ("/home/inaki/Documents/tarea_12/Derecho/2/Legislativo, Ejecutivo y Judicial/"
+  (dired-filename . "/home/inaki/Documents/tarea_12/Derecho/2/Legislativo, Ejecutivo y Judicial/Legislativo, Ejecutivo y Judicial.aux"))
+ ("/home/inaki/Documents/tarea_12/Derecho/2/"
+  (dired-filename . "/home/inaki/Documents/tarea_12/Derecho/2/Bloque de Constitucionalidad"))
+ ("/home/inaki/Documents/tarea_12/Derecho/2/Bloque de Constitucionalidad/" . 121)
+ ("/home/inaki/Documents/tarea_12/Derecho/2/Bloque de Constitucionalidad/Bloque de Constitucionalidad.pdf" . 79194)
+ ("/home/inaki/Documents/tarea_12/Derecho/2/Legislativo, Ejecutivo y Judicial/Legislativo, Ejecutivo y Judicial.tex" . 32)
+ ("/home/inaki/Documents/tarea_12/Mark/" . 40)
+ ("/home/inaki/Documents/tarea_12/"
+  (dired-filename . "/home/inaki/Documents/tarea_12/Derecho"))
+ ("/home/inaki/Documents/tarea_12/Derecho/"
+  (dired-filename . "/home/inaki/Documents/tarea_12/Derecho/2"))
+ ("/home/inaki/Documents/tarea_12/Mate/1/"
+  (dired-filename . "/home/inaki/Documents/tarea_12/Mate/1/tarea2"))
+ ("/home/inaki/Documents/tarea_12/Mate/1/tarea2/"
+  (dired-filename . "/home/inaki/Documents/tarea_12/Mate/1/tarea2/ULIBARRI_IÑAKI_12B_TAREA.tex"))
+ ("/home/inaki/Pictures/"
+  (dired-filename . "/home/inaki/Pictures/4chan"))
+ ("/home/inaki/Pictures/4chan/"
+  (dired-filename . "/home/inaki/Pictures/4chan/animals"))
+ ("/home/inaki/Pictures/4chan/animals/"
+  (dired-filename . "/home/inaki/Pictures/4chan/animals/doge"))
+ ("/home/inaki/Pictures/4chan/animals/doge/"
+  (dired-filename . "/home/inaki/Pictures/4chan/animals/doge/1634514292524.jpg"))
+ ("/home/inaki/Pictures/4chan/animals/doge/1634514292524.jpg" . 614)
+ ("/home/inaki/Pictures/4chan/animals/cheems/"
+  (dired-filename . "/home/inaki/Pictures/4chan/animals/cheems/cheems.jpeg"))
+ ("/home/inaki/Pictures/4chan/animals/cheems/1616115147877.png" . 3)
+ ("/home/inaki/Desktop/"
+  (dired-filename . "/home/inaki/Desktop/Bloons TD 6.desktop"))
+ ("/home/inaki/.config/fish/config.fish" . 102))

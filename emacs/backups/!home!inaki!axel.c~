@@ -1,0 +1,193 @@
+#include<stdio.h>
+#include<stdlib.h>
+
+struct precio{
+        float PrecioC;
+        float PrecioV;
+};
+typedef struct precio Precio;
+struct sabritas{
+        Precio PrecioS;
+        char nombre[30];
+        int codigo;
+};
+typedef struct sabritas Sabritas;
+void funcionAniadir(Sabritas *bPTR, int i n);
+void funcionTabla(int i, Sabritas b[]);
+void ConsultarDatos(int i, Sabritas *bPTR);
+void ModificarDatos(int i, Sabritas b[]);
+int main(){
+        Sabritas b[10000];
+        int opc, i=0, bucle=0,x=1;
+        int *iPtr;
+        iPtr=&i;
+        Sabritas *bPTR;
+        bPTR=b;
+        while(bucle!=1){
+                printf("°~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~° \n");
+                printf("\t\t\t Bienvenido al registro de sabritas\n");
+                printf("\n\t\t\t   ¿Que accion quieres realizar?\n");
+                printf("\t 1.- Aniadir datos\t\t\t\t 2.- Imprimir tabla de datos\n");
+                printf("\t 3.- Consultar datos\t\t\t\t 4.- Modificar datos\n");
+                printf("\t\t\t\t      5.- Salir\n");
+                printf("\t Elige una opcion: ");
+                scanf("%d", &opc);
+                printf("\n°~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~° \n");
+    
+                switch(opc){
+                case 1://Añadir datos
+                        while(x!=0){
+                                funcionAniadir(bPTR, i);
+                                scanf("%d", &x);
+                                i++;
+                        }
+                        break;
+                case 2://Imprimir tabla de datos
+                        funcionTabla(i, b);
+                        break;
+                case 3://Consultar datos
+                        ConsultarDatos(i, bPTR);
+                        break;
+                case 4://Modificar datos
+                        ModificarDatos(i, b);
+                        break;
+                case 5:
+                        return 0;
+                        break;
+                }
+        }
+}
+void funcionAniadir(Sabritas *bPTR, int i){
+        int x=1;
+    
+        printf("\nEscribe el nombre del producto: ");
+        scanf("%s",(bPTR+i)->nombre);
+        printf("\nEscribe el codigo de barras del producto: ");
+        scanf("%d", &(bPTR+i)->codigo);
+        printf("\nEscribe el precio de compra del producto: ");
+        scanf("%f", &(bPTR+i)->PrecioS.PrecioC);
+        printf("\nEscribe el precio de venta del producto:");
+        scanf("%f", &(bPTR+i)->PrecioS.PrecioV);  
+	    
+        printf("Desea salir de la opcion?\n Presione 0 para salir:\n");
+    
+
+        //Dentro de esta funcion se estan asignando productos sin un limite especifico hasta un maximo de 10k
+    
+    
+}
+void funcionTabla(int i, Sabritas b[]){
+        printf("Tabla de todos los productos registrados\n");
+        printf("Nombre\t\tCodigo de Barras\t\tPrecio de Compra\t\tPrecio de venta\n");
+        for(int j=0; j<i; j++){
+                printf("%s\t\t", b[j].nombre);
+                printf("%d\t\t\t\t", b[j].codigo);
+                printf("%f\t\t\t\t", b[j].PrecioS.PrecioC);
+                printf("%f\n", b[j].PrecioS.PrecioV);
+                //utilizando . imprimimos los valores almacenados en el arreglo en la posicion j
+        }
+}
+void ConsultarDatos(int i, Sabritas b[]){
+        int opc1;
+        printf("Cuales datos quieres visualizar\n");
+        printf("1.- nombre \t\t 2.- Codigo de barras\n");
+        printf("3.- Precio de compra\t\t 4.- Precio de Venta\n 5.- Salir\n");
+        scanf("%d", &opc1);
+        switch(opc1){
+        case 1:
+                for(int j=0; j<i; j++){
+                        printf("%d\t", i);
+                        printf("%s\n",b[j].nombre);	
+                }
+                break;
+        case 2:
+                for(int j=0; j<i; j++){
+                        printf("%d\t", i);
+                        printf("%d\n",b[j].codigo);	
+                }
+                break;
+        case 3:
+                for(int j=0; j<i; j++){
+                        printf("%d\t", i);
+                        printf("%f\n",b[j].PrecioS.PrecioC);
+                }	
+                break;
+        case 4:
+                for(int j=0; j<i; j++){
+                        printf("%d\t", i);
+                        printf("%f\n",b[j].PrecioS.PrecioV);
+                }
+                break;
+        case 5:
+		
+                break;
+        default: 5;
+        }
+}
+void ModificarDatos(int i, Sabritas b[]){
+        int x, n;
+        printf("Cuales datos quieres modificar\n");
+        printf("1.- nombre \t\t 2.- Codigo de barras\n");
+        printf("3.- Precio de compra\t\t 4.- Precio de Venta\n 5.- Salir\n");
+        scanf("%d", &x);
+        switch(x){
+        case 1:
+                printf("Que posicion quieres modificar?\n");
+                for(int j=0; j<i; j++){
+                        printf("%d\t", i);
+                        printf("%s\n",b[j].nombre);	
+                }
+                scanf("%d", &n);
+                n=n-1;
+                printf("Elegiste la posicion %d llamada: %s", n, b[n].nombre );
+                printf("\nA que nombre la eliges cambiar?\n");
+                scanf("%s", b[n].nombre);
+                printf("\nEl nuevo nombre para el producto %d es: %s", n, b[n].nombre);
+                break;
+        case 2:
+                printf("Que posicion quieres modificar?\n");
+                for(int j=0; j<i; j++){
+                        printf("%d\t", i);
+                        printf("%d\n",b[j].codigo);	
+                }
+                scanf("%d", &n);
+                n=n-1;
+                printf("Elegiste la posicion %d llamada: %d", n, b[n].codigo );
+                printf("\nA que nombre la eliges cambiar?\n");
+                scanf("%d", b[n].codigo);
+                printf("\nEl nuevo nombre para el producto %d es: %d", n, b[n].codigo);
+			
+                break;
+        case 3:
+                printf("Que posicion quieres modificar?\n");
+                for(int j=0; j<i; j++){
+                        printf("%d\t", i);
+                        printf("%f\n",b[j].PrecioS.PrecioC);	
+                }
+                scanf("%d", &n);
+                n=n-1;
+                printf("Elegiste la posicion %d llamada: %f", n, b[n].PrecioS.PrecioC );
+                printf("\nA que nombre la eliges cambiar?\n");
+                scanf("%f", b[n].PrecioS.PrecioC);
+                printf("\nEl nuevo nombre para el producto %d es: %f", n, b[n].PrecioS.PrecioC);
+                break;
+        case 4:
+                printf("Que posicion quieres modificar?\n");
+                for(int j=0; j<i; j++){
+                        printf("%d\t", i);
+                        printf("%f\n",b[j].PrecioS.PrecioV);	
+                }
+                scanf("%d", &n);
+                n=n-1;
+                printf("Elegiste la posicion %d llamada: %f", n, b[n].PrecioS.PrecioV );
+                printf("\nA que nombre la eliges cambiar?\n");
+                scanf("%f", b[n].PrecioS.PrecioV);
+                printf("\nEl nuevo nombre para el producto %d es: %f", n, b[n].PrecioS.PrecioV);
+                break;
+        case 5:
+			
+                break;
+        default: 5;
+        }
+	
+}

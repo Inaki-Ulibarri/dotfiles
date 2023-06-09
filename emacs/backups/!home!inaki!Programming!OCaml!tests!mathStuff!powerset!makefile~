@@ -1,0 +1,5 @@
+powerset.exe:
+	ocamlc -o powerset.exe powerset.ml
+
+run: powerset.exe
+	powerset.exe

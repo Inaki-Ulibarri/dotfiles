@@ -1,0 +1,17 @@
+{-# LANGUAGE NumericUnderscores #-}
+
+import Data.List
+
+isqrt :: Integer -> Integer
+isqrt = floor . sqrt . fromIntegral
+
+sieve :: Integer -> [Integer]
+sieve n =
+  [b | a <- [2..isqrt n]
+     , b <- [a^2, a^2+a..n]]
+      
+     
+solve = 1
+  
+main = do
+  print $ sieve 10

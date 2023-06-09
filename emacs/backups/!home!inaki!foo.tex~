@@ -1,0 +1,16 @@
+\documentclass{article}
+\usepackage{amsmath, amssymb}
+
+\begin{document}
+\[ 0 < \theta < \frac{\pi}{2} \rightarrow sin(\theta) + cos(\theta) > 1 \]
+
+\begin{align*}
+  0 \in \left[\frac{\pi}{2}, 2\pi \right) &\implies sin(\theta) + cos(\theta) > 1 \\
+    \therefore \\
+    sin(\theta), cos(\theta) &\in \mathbb R^+, \\
+    sin^2(\theta) + cos^2(\theta) &= 1 \implies \\
+    sin^2(\theta) + cos^2(\theta) &= 1^2 - 2cos(\theta)sin(\theta) \implies \\
+    sin^2(\theta) + cos^2(\theta) &> 1    
+\end{align*}
+
+\end{document}

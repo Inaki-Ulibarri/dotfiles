@@ -1,0 +1,3 @@
+presentation.pdf: presentation.md
+	pandoc --to=beamer presentation.md -o presentation.pdf	
+

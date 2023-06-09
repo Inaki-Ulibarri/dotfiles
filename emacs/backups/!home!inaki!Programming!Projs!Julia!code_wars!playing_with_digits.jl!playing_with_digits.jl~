@@ -1,0 +1,20 @@
+function get_digits(n)
+    digs = []
+    while n > 0
+        push!(digs, n % 10)
+        n = (n - n % 10) ÷ 10
+    end
+
+    return reverse(digs)
+end
+
+function pow_list(list, k)
+    expl = list
+    for i in list
+        expl[i] = list[i]^k
+    end
+
+    return expl
+end
+
+println(pow_list([1,2,3,4], 3))

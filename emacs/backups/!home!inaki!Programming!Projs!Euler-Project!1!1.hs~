@@ -1,0 +1,6 @@
+mult ::  Int -> Int
+mult a
+  | a `mod` 15 == 0 = a
+  | otherwise       = 0
+
+lst n = sum [mult a | a <- [1..n]]

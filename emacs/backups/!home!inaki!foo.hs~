@@ -1,0 +1,4 @@
+{-# LANGUAGE NumericUnderscores#-}
+
+main = do
+  print ":D"

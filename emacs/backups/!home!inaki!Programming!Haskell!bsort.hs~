@@ -1,0 +1,48 @@
+{- Bubble Sort nooby implementation
+   Iñaki Ulibarri Utrilla
+   13 - 12 - 22
+-}
+
+{-# LANGUAGE UnicodeSyntax #-}
+-- Should I? No.
+-- Do I care? No.
+
+-- nooby bubble-sort implementation
+-- the algorithm needs no presentations
+-- at this point
+bsort ∷ (Ord a) ⇒ [a] → [a]
+bsort [] = []
+bsort xs =
+  if isOk xs
+  then xs
+  else bsort $ bsort' xs
+  where
+    -- check if there are any changes needed
+    isOk ∷ (Ord a) ⇒ [a] → Bool
+    isOk [x] = True
+    isOk (x:y:xs) = 
+      if x > y
+      then False
+      else isOk (y:xs)
+    -- make a sorting pass
+    bsort' ∷ (Ord a) ⇒ [a] → [a]
+    bsort' [x] = [x]
+    bsort' (x:y:xs) =
+      low : bsort' (up:xs)
+      where
+        low = min x y
+        up  = max x y
+
+qsort ∷ (Ord a) ⇒ [a] → [a]
+qsort [] = []
+qsort (x:xs) =
+  low ++ [x] ++ high
+  where
+    low  = qsort $ filter (<=x) xs
+    high = qsort $ filter (x<) xs
+     
+-- main :: IO()
+-- main =
+--   putStrLn 
+  
+

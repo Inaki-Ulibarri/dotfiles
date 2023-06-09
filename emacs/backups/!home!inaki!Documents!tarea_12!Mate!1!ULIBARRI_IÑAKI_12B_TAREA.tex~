@@ -1,0 +1,173 @@
+\documentclass[18pts]{article}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[spanish]{babel}
+\usepackage{graphicx}
+\graphicspath{./}
+
+\title {Tarea 2}
+\author {Iñaki Ulibarri Utrilla}
+\date{\today} 
+
+\begin {document}
+\maketitle
+\pagenumbering {roman}
+% Sección 1, ejercicios 12 - 13, pag 52
+\section {Sección 1}
+\begin {itemize}
+\item Ejercicio 10, Evalúe desigualdades
+  \begin {flalign*}
+    & 6x + 3 > 2x - 5 \\
+    & 4x > -8 \\
+    & x > -2 \Rightarrow (-2, \infty)
+  \end {flalign*}
+
+\item Ejercicio 12, Defina el dominio de las desigualdades
+  \begin {flalign*}
+    & 2x^2 + 5x - 3 < 0 \Rightarrow \\
+    & (x + \frac{1}{2})(x + 3) < 0 \Rightarrow [-3, \frac{1}{2}]   \end {flalign*}
+\end {itemize}
+
+% ejercicios 42 - 44, 48 - 49, pag 53
+\begin {itemize}
+\item  Ejercicio 42, Evalúe la función $f(x) = \frac{x+1}{x}$
+  \begin {enumerate}
+  \item f(2)
+  \item $f(\frac{1}{2})$
+  \item f'(2)
+  \end {enumerate}
+  \begin {flalign*}
+    f(2) &= \frac{(2+1)}{2} = \frac{3}{2} \\
+     f(\frac{1}{2}) &= \frac{\frac{1}{2} + 1}{\frac{1}{2}} = \frac{6}{2} \\
+     f'(2) &= \frac{\frac{(2+h+1)}{2} - \frac{(2+1)}{2}}{h} \\
+           &= \frac{(2+h+1)-(2+1)}{2h} 
+  \end {flalign*}
+\item Ejercicio 43, Defina el dominio natural de las funciones
+  \begin {enumerate}
+  \item $f(x) = \frac{x}{x^2 - 1}$
+  \item $g(x) = \sqrt{4 - x^2}$
+  \end {enumerate}
+  \begin {flalign*}
+    \frac{x}{x^2 - 1} &\Rightarrow (1, \infty) \\
+    \sqrt{4 - x^2} &\Rightarrow (2, \infty)
+  \end {flalign*}
+
+\item Ejercicio 44, ¿Cuales de las siguientes son pares?
+  \begin {enumerate}
+  \item $f(x) = \frac{3x}{x^2 + 1}$
+  \item $g(x) = |sin(x)| + cos(x)$
+  \item $h(x) = x^3 + sen(x)$
+  \item $k(x) = \frac{x^2 + 1}{|x| + x^4}$
+  \end {enumerate}
+  \begin {itemize}
+  \item Pares
+    \begin {itemize}
+    \item g(x)
+    \item k(x)
+    \end {itemize}
+  \item Impares
+    \begin {itemize}
+    \item f(x)
+    \item h(x)
+    \end {itemize}
+   \end {itemize}
+
+\item Ejercicio 48, sean las funciones $\frac{x-1}{x}, g(x) = x^2 + 1$, evalúe las siguientes expresiones
+  \begin {enumerate}
+  \item $(f+g)(2)$
+  \item $(fg)(2)$
+  \item $(f \circ g)(2)$
+  \item $(g \circ f)(2)$
+  \item $f^3(-1)$
+  \item $f^2(2) + g^2(2)$
+  \end {enumerate}
+  \begin {itemize}
+  \item $(f + g)(2) = \frac{x+1}{x} + x^2 + 1 = \frac{3}{2}+4+1 = \frac{13}{2}$
+  \item $(fg)(2) = (\frac{x+1}{x})(x^2+1) = (\frac{3}{2})(4+1) = \frac{15}{2}$
+  \item $(f \circ g)(2) = \frac{x^2 + 2}{x^2 + 1} = \frac{4 + 2}{4 + 1} = \frac{6}{5}$
+  \item $(g \circ f)(2) = (\frac{x+1}{x})^2 + 1 = (\frac{2+1}{2})^2 + 1 = \frac{13}{4}$
+  \item $f^3(-1) = \frac{x^3+3x^2+3x+1}{x^3} = \frac{(-1)^3+3(-1)^2+3(-1)+1}{-1^3} = 0$
+  \item $f^2(2) + g^2(2) = (\frac{x+1}{x})^2 + (x^2+1)^2 = (\frac{2+1}{2})^2 + (2^2+1)^2 = (\frac{3}{2})^2 + (5)^2 = \frac{109}{4}$    
+  \end {itemize}
+\item Ejercicio 49, Grafica las siguientes con funciones con uso de translaciones
+  \begin{itemize}
+  \item f(x) = $\frac{1}{4}x^2$
+  \item g(x) = $\frac{1}{4}(x+2)^2$
+  \item h(x) = $\frac{1}{4}(x+2)^2 - 1$
+  \end{itemize}
+  \begin {figure}
+    \includegraphics[width=\linewidth]{Screenshot_2022-09-25_12-03-21.png}
+  \end {figure}
+
+  % ejercicios 9, 11 - 12, pag 54
+\item Ejerciocio 9, página 54, Dominios naturales de las siguientes funciones
+  \begin {enumerate}
+  \item $f(x) = \frac{x^2-1}{x-1}$
+  \item $g(x) = \frac{x^2-2x1}{2x^2-x-1}$
+  \end {enumerate}
+  \begin {itemize}
+  \item $f(x) = \frac{x^2-1}{x-1} \Rightarrow D = \mathcal{R} - {1}$
+  \item $g(x) = \frac{x^2-2x1}{2x^2-x-1}  \Rightarrow D = \mathcal{R} - \{-\frac{1}{2}, 1\}$
+  \end {itemize}
+
+\item Ejercicio 11, calcule 0.9, 0.99, 0.999, 1.1, 1.01 y 1.001 en las funciones del ejercicio 9
+  \begin {flalign*}
+    f(0.9) &= 1.9\\
+    f(0.99) &= 1.99\\
+    f(0.999) &= 1.9989\\
+    f(1.1) &= 2.009\\
+    f(1.01) &= 2.0009\\
+    f(1.001) &= 2.00009\\
+    g(0.9) &= -0.03\\
+    g(0.99) &= -0.003\\
+    g(0.999) &= -0.0003\\
+    g(1.1) &= 0.003\\
+    g(1.01) &= 0.0003\\
+    g(1.001) &= 0.0003
+  \end {flalign*}
+
+
+\item Ejercicio 12, tabule los límites en uno de $f(x) = \frac{abs(x)}{x}, g(x) = \frac{sin(x)}{x}$
+  \begin {flalign*}
+    f(-1) &= -1\\
+    f(-0.1) &= -1\\
+    f(-0.01) &= -1\\
+    f(-0.001) &= -1\\
+    f(0.001) &= 1\\
+    f(0.01) &= 1\\
+    f(0.1) &= 1\\
+    f(1) &= 1\\
+    g(-1) &= 0.8414\\
+    g(-0.1) &= 0.9999\\
+    g(-0.01) &= 0.9999 \\
+    g(-0.001) &= 0.9999\\
+    g(0.001) &= 0.9999\\
+    g(0.01) &= 0.9999\\
+    g(0.1) &= 0.9999\\
+    g(1) &= 0.8414\\
+  \end {flalign*}
+\end {itemize}
+% sección 2, plantea dos funciones de nivel medio, grafica
+% resuelve para todas las ecuaciones de función
+\section {Sección 2, plantea dos funciones de nivel medio, grafica resuelve para todas las ecuaciones de función}
+\begin {itemize}
+\item $f(x) = \frac{1}{\sqrt{x+1}}$
+\item $g(x) = tan(ln(x))$
+\end {itemize}
+$f(x) \therefore D_f = [-1, \infty)$ \\
+  $g(x) \therefore D_g = \{x: x \neq e^k, k = \frac{2n+1}{2}\pi\}$
+  \begin {flalign*}
+    & (f+g)(x) = \frac{1}{\sqrt{x+1}} + tan(ln(x)) \\
+    & (f+g)(x) = \frac{1}{\sqrt{x+1}} - tan(ln(x)) \\
+    & (fg)(x) = \bigg(\frac{1}{\sqrt{x+1}}\bigg)(tan(ln(x))) \\
+    & \bigg(\frac{f}{g}\bigg)(x) = \frac{1}{(\sqrt{x+1})(tan(ln(x)))}\\
+    & \bigg(\frac{g}{f}\bigg)(x) = tan(ln(x))\sqrt{x+1} \\    
+    & (f \circ g)(x) = \frac{1}{\sqrt{tan(ln(x))+1}} \\
+    & (g \circ f)(x) = tan\bigg(ln\bigg(\frac{1}{\sqrt{x+1}}\bigg)\bigg)
+  \end {flalign*}
+  \newpage
+    \begin {figure}
+    \includegraphics[angle=90]{Screenshot_2022-09-26_18-03-21.png}
+  \end {figure}
+\end {document}

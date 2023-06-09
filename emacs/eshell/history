@@ -1,0 +1,128 @@
+./sopas 
+llddb sopas
+lldb sopas 
+./sopas 
+./sopas 
+./sopas 
+./foo 
+./sopas 
+./sopas 
+./sopas 
+./sopas 
+./sopas 
+./sopas 
+./sopas 
+lldb sopas
+./sopas 
+./sopas 
+./sopas 
+./sopas 
+./sopas 
+./sopas 
+./sopas 
+./sopas 
+ls
+./main
+./main 
+./main
+make
+./main
+ls
+..
+ls
+rm -rf julia-snail-20220927.704/
+./main
+./main
+make -k
+./main
+./main
+make 
+./main
+./main
+./main 
+./main
+./main
+make
+./main
+./main 
+./main
+./main
+make && ./main
+./main
+./main
+./main
+./main --debug=lldb
+ls
+lldb main
+lldb main
+./main
+./maih
+./main
+./main
+./main
+./main
+make
+./main
+make; ./main
+make
+./main
+make
+./main
+./main
+./main
+./main
+./main
+make
+make
+make
+make
+./main
+./main
+sudo apt install libtool -y
+sudo apt install libtool
+./foo 
+ls
+./fib
+./fib
+./fib
+./fib
+./fib
+./fib
+./fib
+./fib
+make
+./powerset.exe 
+./powerset.exe 
+make
+make
+./powerset.exe 
+make 
+./powerset.exe 
+./powerset.exe 
+make
+./powerset.exe 
+ls
+make
+make
+./powerset.exe 
+mkae
+make
+./powerset.exe 
+ls
+ocamlc powerset.ml 
+mkae
+make
+./powerset.exe 
+cat makefile 
+cp Pictures/Wallpapers/1628844824397.jpg ./.config/awesome/themes/multicolor/
+ls
+tree Zomboid/
+cd Programming/Haskell/
+runhaskell bsort.hs 
+julia
+julia
+cd ~
+ls
+cd Downloads/
+ls
+7zip vollkorn-4-105.zip 

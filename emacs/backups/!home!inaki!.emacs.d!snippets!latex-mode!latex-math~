@@ -1,0 +1,20 @@
+# -*- mode: snippet -*-
+# name: latex-mode
+# key: latex-math
+# --
+
+\documentclass[18pts]{article}
+\usepackage{amsmath, amssymb}
+\usepackage[shortlabels]{enumitem}
+\usepackage[spanish]{babel}
+
+\title{`(buffer-file-name)`}
+\author{Iñaki Ulibarri Utrilla}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+\newpage
+
+\end{document}

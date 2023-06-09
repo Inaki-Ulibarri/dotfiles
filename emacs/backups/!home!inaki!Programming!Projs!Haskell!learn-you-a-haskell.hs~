@@ -1,0 +1,297 @@
+{-# LANGUAGE NumericUnderscores #-}
+
+module Learn where
+import qualified Data.List as L
+import qualified Data.Map  as M
+
+-- Funky syntax with language extensions, some for unicode syntax
+-- others for numerical underscores
+fact :: Integer -> Integer
+fact 0 = 1
+fact n = n * fact (n-1)
+
+factorials n = [fact x| x <- [1..n]]
+
+gcd' :: Integer -> Integer -> Integer
+gcd' a 0 = a
+gcd' a b = gcd b (a `mod` b)
+
+bmi :: (Fractional a, Ord a) => a -> a -> String
+bmi weight height 
+  | bmi' <= skinny = "You're a skinny emo!"
+  | bmi' <= normal = "You may be normal, but you're still ugly"
+  | bmi' <= fatso  = "Fatso, haha!"
+  | otherwise      = "TLC wants to make a documentary on you"
+  where bmi' = weight / height^2
+        (skinny, normal, fatso) = (18.5, 25.0, 30.0)
+
+bmiList :: (Fractional a, Ord a) => [(a, a)] -> [a]
+bmiList xs = [bmi | (w, h) <- xs, let bmi = w / h^2]
+  -- where bmi weight height = weight / height^2
+  -- `let` is an expression, `where` is a syntax construct
+
+describeList :: [a] -> String
+describeList xs = "The list is " ++ what xs
+  where what []     = "an empty list"
+        what [x]    = "a singleton"
+        what xs     = "a list"
+
+quickSort :: (Ord a) => [a] -> [a]
+quickSort [] = []
+quickSort (x:xs) =
+  let small = quickSort $ filter (<= x) xs
+      big   = quickSort $ filter (>x) xs
+  in small ++ [x] ++ big
+  
+applyTwice :: (a -> a) -> a -> a
+applyTwice f x = f $ f x
+
+-- reapplication of a std library function
+zipWith' :: (a -> b -> c) -> [a] -> [b] -> [c]
+zipWith' _ [] _ = []
+zipWith' _ _ [] = []
+zipWith' f (x:xs) (y:ys) = f x y : zipWith' f xs ys
+
+flip' :: (a -> b -> c) -> (b -> a -> c)
+flip' f a b = f b a
+
+filter' :: (a -> Bool) -> [a] -> [a]
+filter' _ [] = []
+filter' s (t:ts)
+  | s t = t: filter' s ts
+  | otherwise = filter s ts
+
+
+g :: Int
+g = head $ filter p [100_000, 99_999..]
+  where p x = x `mod` 8517 == 0 
+
+collatz :: (Integral a) => a -> [a]
+collatz 1 = [1]
+collatz n
+  | even n = n: collatz (n `div` 2)
+  | otherwise = n: collatz (3*n + 1)
+
+collatzMuh :: Int -> Int -> Int
+collatzMuh n m = length $ filter (\xs -> length xs >= m) $ map collatz [1..n]
+{-- lambda functions are used and trown away, no need to reuse what
+    will only be used once
+ --}
+
+listMult = map (*) [0..] -- partially applied funtion
+
+shittyMap :: (a -> b) -> [a] -> [b]
+shittyMap f xs = foldr (\x acc -> f x:acc) [] xs
+
+shittySum :: (Num a) => [a] -> a
+shittySum =  (foldl (\acc x -> x+acc) 0)
+
+sqrtSum :: Int
+sqrtSum = (1+) $ length $ takeWhile (<1_000) $ scanl1 (+) $ map sqrt [1..]
+
+identity :: Float -> Float
+identity = ((^2) . negate . sqrt)
+
+oddSquareSum :: Int -> Int
+oddSquareSum n = sum . takeWhile (<n) . filter odd . map (^2) $ [1..]
+{-- oddSquareSum n = -- more readable, but it gets the point of composition through
+     let oddSqrs = filter odd . map (^2) $ [1..]
+         limit = takeWhile (<n) oddSqrs
+     in sum limit
+--}
+
+takePows :: Int -> Int -> [Int]
+takePows n m = take m $ L.iterate (*n) 1
+{-  functions in modules are loaded like C headers
+    and function like any other module system, exceptions
+    and explicit import can be done like this
+        import Data.List (nub, sort)  -- specific import
+        import Data.List hiding (nub) -- apartheid of functions :-)
+-}
+
+data Point = Point Float Float deriving (Show, Eq)
+data Shape = Circle Point Float | Rectangle Point Point deriving (Show, Eq)
+{- automagically derive the show type for these, all the elements
+   that conform the type need to be defined in the typeclass that
+   is being derived
+-}
+data Book = Book { title :: String
+                 , author :: String
+                 , publisher :: String
+                 , pDate :: Int
+                 } deriving (Eq, Show, Read)
+{- Record declaration for haskell, functions to getn
+   automagically created to retrieve individual fields
+-}
+data Quotient a b = Quotient { num :: a
+                             , den :: b
+                             } deriving (Show, Eq)
+{- Records can have type parameters to determine their types
+   to make them more general
+-}
+
+surface :: Shape -> Float
+surface (Circle _ r) = pi * r^2
+surface (Rectangle (Point x1 y1) (Point x2 y2)) =
+         abs $ (x2 - x1) * (y2 - y1)
+
+showBook :: Book -> String
+showBook (Book t a p d) =
+  t ++ " was written by " ++ a ++ " in " ++ (show d) ++ " and was published by " ++ p
+       
+sumQuots :: (Num a) => (Quotient a a) -> (Quotient a a) -> (Quotient a a)
+sumQuots (Quotient a b) (Quotient c d) =
+  (Quotient ((a*d) + (b*d)) (b*d))
+
+{- Types with the proper typeclasses can be sent into general functions that
+   support them, for example:
+   filter (\(Point a b) -> a >= 10)
+   [(Point 8 1), (Point 9 2), (Point 10 3), (Point 11 4)]
+-}
+
+{- No languasge is complete without type synonyms
+   type String = [Char]
+
+   let yourSister'sNumber = "1234 5678"
+   in callNumber yourSister'sNumber
+-}
+
+-- Data types can also be partially applied
+type StrMap = M.Map String
+type PhoneNumber = StrMap Integer
+
+myPhoneDirectory :: PhoneNumber
+myPhoneDirectory =
+  M.fromList [("Miriam", 123), ("Jennifer", 456),
+              ("Clara", 789),  ("Clara's Mom <3", 101)]
+
+phoneNumberLookup :: String -> PhoneNumber -> Maybe Integer
+phoneNumberLookup name map =
+  M.lookup name map
+
+{- To look up your mothers phone number I'd have to:
+
+   let pd = M.fromList [("Your Mother", 123), ("Your Sister", 456), ("Your Girlfriend", 789)]
+   in  phoneNumberLookup "You Mother" pd
+-}  
+
+{- type Either a b = Left a | Right b
+   data type for fuction that can hyave various types
+   as a part of its evaluation
+-}
+haveDated :: String -> PhoneNumber -> Either String Bool
+haveDated name numberBook =
+  case M.lookup name numberBook of
+    Just _ -> Left $ "Yeah, I've totally dated " ++ name ++ " bro B)"
+    Nothing -> Right $ False
+
+{- Recursive data structures such as trees
+   and lists are basic of course
+-}
+
+data Tree a = Leaf | Node a (Tree a) (Tree a)
+  deriving (Show, Read, Ord, Eq)
+
+primeTree :: Tree Integer
+primeTree =
+  Node 13
+  (Node 5
+    (Node 3
+     (Node 2 Leaf Leaf)
+     (Node 11 Leaf Leaf))
+    Leaf)
+  (Node 19
+    (Node 17 Leaf Leaf)
+    (Node 23 Leaf Leaf))
+
+singleTree :: a -> Tree a
+singleTree x = Node x Leaf Leaf
+
+elemTree :: (Ord a) => a -> Tree a -> Bool
+elemTree _ Leaf = False
+elemTree x (Node y l r)
+  | x == y = True
+  | x < y  = elemTree x l
+  | x > y  = elemTree x r
+
+insertTree :: (Ord a) => a -> Tree a -> Tree a
+insertTree x Leaf = singleTree x
+insertTree x (Node y l r)
+  | x == y = Node y l r
+  | x < y  = Node y (insertTree x l) r  
+  | x > y  = Node y l (insertTree x r)
+
+validTree :: (Ord a) => Tree a -> Bool
+validTree (Node _ Leaf Leaf) = True
+validTree (Node x foo@(Node y _ _) bar@(Node z _ _))
+  | x > y && x < z
+    && validTree foo && validTree bar = True
+    -- Look up sub-trees for validity
+  | otherwise = False
+validTree (Node x foo@(Node y _ _) Leaf)
+  | x > y && validTree foo = True
+  | otherwise = False
+validTree (Node x Leaf foo@(Node z _ _))
+  | x > z && validTree foo = True
+  | otherwise = False   
+
+
+{- Instances of typeclasses can be declared and
+   defined to expand the type-system and expand
+   basic language functions to our own data-types.
+-}
+
+data PlayingCard = Ace | Jack | Queen | King
+
+instance Eq PlayingCard where
+  Ace   == Ace   = True
+  Jack  == Jack  = True
+  Queen == Queen = True
+  King  == King  = True
+  _     == _     = False
+
+instance Show PlayingCard where
+  show Ace   = "Ace"
+  show Jack  = "Jack"
+  show Queen = "Queen"
+  show King  = "King"
+
+{- We can also add class constraints,
+   this is commented because it is a repeated
+   instance
+
+instance (Eq a) => Eq (Maybe a) where
+  -- The type has to be equatable to
+  -- equate it's «Just a
+  Just x  == Just y  = x == y
+  Nothing == Nothing = True
+  _       == _       = False
+-}
+
+-- We can obviously make our own classes and
+-- their corresponding instances   
+class YesNo a where
+  yesno :: a -> Bool
+
+instance YesNo Integer where
+  yesno 0 = False
+  yesno _ = True
+  
+instance YesNo [a] where
+  yesno [] = False
+  yesno _  = True
+
+instance YesNo Bool where
+  yesno = id
+
+instance YesNo (Maybe a) where
+  yesno (Just _) = True
+  yesno Nothing  = False  
+
+{- The «Functor» typeclass serves for data structures that
+   can be mapped over, such as
+-}
+instance Functor Tree where
+  fmap _ Leaf = Leaf
+  fmap f (Node x t1 t2) = Node (f x) (fmap f t1) (fmap f t2)
+

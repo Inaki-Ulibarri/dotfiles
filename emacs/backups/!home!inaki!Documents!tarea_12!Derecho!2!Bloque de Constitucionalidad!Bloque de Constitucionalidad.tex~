@@ -1,0 +1,17 @@
+\documentclass[18pts]{article}
+\usepackage[spanish]{babel}
+\usepackage{setspace}
+\spacing{1.5}
+
+\title{Bloque de Constitucionalidad}
+\author{Iñaki Ulibarri Utrilla}
+
+\begin{document}
+\maketitle
+\pagenumbering{roman}
+\newpage
+
+El bloque de constitucionalidad se refiere a la serie de tratados y convenciones a las
+que está atada el país, en particular de derechos humanos y derechos del individuo.
+
+\end{document}

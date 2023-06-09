@@ -1,0 +1,7 @@
+let fib (n: int) =
+  let rec aux nth acc pp p =
+    if acc = nth then pp
+    else aux nth (acc+1) p (pp+p)
+  in
+  aux n 1 1 1
+;;

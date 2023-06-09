@@ -1,0 +1,55 @@
+/***************************************************************************************************/
+/* Richard Phillips Feynman was a well-known American physicist and a				   */
+/* recipient of the Nobel Prize in Physics. He worked in theoretical				   */
+/* physics and pioneered the field of quantum computing.					   */
+/* 												   */
+/* Recently, anold farmer found some papers and notes that are believed to have belonged	   */
+/* 	to Feynman. Among notes about mesons and electromagnetism, there was			   */
+/* 	a napkin where he wrote a simple puzzle: "how many different squares are there		   */
+/* 	in a grid of NxN squares?".								   */
+/* 												   */
+/* For example, when N=2, the answer is 5: the 2x2 square itself, plus the four 1x1 squares	   */
+/* 	in its corners:										   */
+/***************************************************************************************************/
+
+#include <criterion/criterion.h>
+#include <stddef.h>
+
+size_t count_squares(size_t n)
+{
+	if (n == 1) return 1;
+
+	size_t sum = 0;
+	for (size_t i = 1; i <= n; ++i) {
+		size_t fits = 1 + (n - i);
+		sum += fits*fits;
+	}
+
+	return sum;
+	/****************************************************************************/
+	/* return n * (n+1) * (2*n+1) / 6;					    */
+	/* Yet again, I am humbled by the simplicity of a stragers solution,	    */
+	/* 	not only is it O(1), but also extremely to read and way		    */
+	/* 	beyond my understanding						    */
+	/****************************************************************************/
+}
+	
+void tester(int n, size_t expected);
+
+Test(count_squares, Sample_Tests)
+{
+    tester(  1,    1 );
+    tester(  2,    5 );
+    tester(  3,   14 );
+    tester(  5,   55 );
+    tester(  8,  204 );
+    tester( 15, 1240 );
+}
+
+void tester(int n, size_t expected) {
+    size_t submitted = count_squares(n);
+    cr_assert_eq(                                 submitted,       expected,
+        "< Incorrect Result >\n \nfor  n = %d\n \nSubmitted: %zu\nExpected:  %zu\n \n",
+                              n,                  submitted,       expected
+    );
+}

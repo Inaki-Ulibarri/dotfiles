@@ -1,0 +1,77 @@
+/*************************************************************************************/
+/* ROT13 is a simple letter substitution cipher that replaces a letter               */
+/*  with the letter 13 letters after it in the alphabet. ROT13 is an                 */
+/* example of the Caesar cipher.                                                     */
+/*                                                                                   */
+/* Create a function that takes a string and returns the string ciphered with Rot13. */
+/*  If there are numbers or special characters included in the string, they should   */
+/* be returned as they are. Only letters from the latin/english alphabet should be   */
+/* shifted, like in the original Rot13 "implementation".                             */
+/*************************************************************************************/
+
+// TODO: Replace examples and use TDD development by writing your own tests. The code provided here is just a how-to example.
+
+#include <criterion/criterion.h>
+#include <ctype.h>
+#include <stddef.h>
+#include <string.h>
+#include <malloc.h>
+
+static inline rot13_in(char c)
+{
+        if (isascii(c) && isupper(c)) 
+                return c <= 'N' ?  c - 13 : c + 13;
+        if (isascii(c) && islower(c)) 
+                return c <= 'n' ?  c - 13 : c + 13;
+        else
+                return 0;
+}
+
+// replace with the actual method being tested
+char * rot13(const char *src)
+{
+        size_t src_sz = strlen(src);
+        char * rot = calloc(src_sz * sizeof(char));
+        for (size_t i = 0; i < src_sz; ++i) 
+                rot[i] = rot13_in(src[i]);
+        
+}
+
+Test(BasicTests, ShouldPassAllTheTestsProvided) {
+    // Test 01
+    {
+        const char *src      = "test";
+        const char *expected = "grfg";
+        char *actual         = rot13(src);
+        
+        if (actual) {
+            cr_assert_str_eq(expected, actual, "Expected: \"%s\", Actual: \"%s\"\n", expected, actual);
+        } else {
+            cr_assert(0, "Expected: \"%s\", Actual: NULL", expected);
+        }
+        
+        /* It's okay if actual == NULL and we free a NULL pointer. */
+        free(actual); actual = NULL;
+    }
+    
+    // Test 02
+    {
+        const char *src      = "Test";
+        const char *expected = "Grfg";
+        char *actual         = rot13(src);
+        
+        if (actual) {
+            cr_assert_str_eq(expected, actual, "Expected: \"%s\", Actual: \"%s\"\n", expected, actual);
+        } else {
+            cr_assert(0, "Expected: \"%s\", Actual: NULL", expected);
+        }
+        
+        /* It's okay if actual == NULL and we free a NULL pointer. */
+        free(actual); actual = NULL;
+    }
+}
+
+Test(SemiAdvancedTest, ShouldPassAllTestsProvided)
+{
+        
+}

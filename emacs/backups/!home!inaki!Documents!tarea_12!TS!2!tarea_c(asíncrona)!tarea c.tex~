@@ -1,0 +1,17 @@
+\usepackage[spanish]{babel}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[shortlabels]{enumitem}
+\documentclass[18pts]{article}
+
+\title{Tarea C}
+\author{Iñaki Ulibarri Utrilla}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\begin{enumerate}[i)]
+\end{enumerate}
+
+\end{document}

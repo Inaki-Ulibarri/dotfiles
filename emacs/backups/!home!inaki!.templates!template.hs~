@@ -1,0 +1,4 @@
+{-# LANGUAGE UnicodeSyntax #-}
+
+main = do
+  putStrLn ":D"

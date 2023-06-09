@@ -1,0 +1,5 @@
+((magit-commit nil)
+ (magit-dispatch nil)
+ (magit-merge nil)
+ (magit-show-refs nil)
+ (magit-submodule nil))

@@ -1,0 +1,12 @@
+using Plots
+
+x = range(0, 4π, length=40)
+y = sin.(x)
+y2 = @. sin(x) + 0.1*randn()
+# @. es una macro especial de la libreria
+
+plot(x, y, legend=:outerbottom, label="sen(x)", linewidth=3, title="Datos")
+plot!(x, y2, label="datos", seriestype=:scatter)
+
+gui()
+

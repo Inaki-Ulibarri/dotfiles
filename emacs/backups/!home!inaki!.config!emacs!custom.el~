@@ -1,0 +1,15 @@
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(custom-safe-themes
+   '("a38d7a034d1c4aafd9831437fa983ce3c95de8ed20f2523f5a5a27259680ff28" default))
+ '(package-selected-packages
+   '(julia-repl tabbar session pod-mode muttrc-mode mutt-alias markdown-mode initsplit htmlize graphviz-dot-mode folding eproject diminish csv-mode color-theme-modern browse-kill-ring boxquote bm bar-cursor apache-mode yasnippet yaml-mode utop use-package spinner s racket-mode oceanic-theme nyan-mode multiple-cursors magit lua-mode latex-unicode-math-mode latex-preview-pane julia-mode image-archive haskell-mode dockerfile-mode dired-sidebar company bibtex-utils base16-theme)))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )

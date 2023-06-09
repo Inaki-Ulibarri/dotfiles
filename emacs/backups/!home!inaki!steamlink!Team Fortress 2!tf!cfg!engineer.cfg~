@@ -1,0 +1,24 @@
+// binds for construction
+alias build_dispenser     "build 0 0"
+alias build_tp_entrance   "build 1 0"
+alias build_tp_exit       "build 1 1"
+alias build_sentry        "build 2 0"
+
+alias destroy_dispenser   "destroy 0 0"
+alias destroy_tp_entrance "destroy 1 1"
+alias destroy_sentry      "destroy 2 0"
+alias destroy_tp_exit     "destroy 3 0"
+      
+bind "MOUSE3" "destroy_sentry; build_sentry"
+
+//
+// eureka effect binds
+//
+bind shift +toggle_eureka
+bind "t" eureka_tele
+alias eureka_to_spawn "tf_weapon_wrench; eureka_teleport 0"
+alias eureka_to_tele  "tf_weapon_wrench; eureka_teleport 1"
+
+alias -toggle_eureka "alias eureka_tele eureka_to_spawn"
+alias +toggle_eureka "alias eureka_tele eureka_to_tele"
+

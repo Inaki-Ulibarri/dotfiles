@@ -1,0 +1,19 @@
+{-# LANGUAGE UnicodeSyntax #-}
+
+main ∷ IO ()
+main = do
+  putStrLn "Dame tu nombre"
+  ln ← getLine
+  if null ln
+    then return ()
+    else
+    do
+      putStrLn $ reverseWords ln
+      main
+    
+fortune ∷ String → String
+fortune _ = "Vas a morir"
+
+reverseWords ∷ String → String
+reverseWords = unwords . map reverse . words
+

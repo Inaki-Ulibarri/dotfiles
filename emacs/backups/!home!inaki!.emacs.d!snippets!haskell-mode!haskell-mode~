@@ -1,0 +1,11 @@
+# -*- mode: snippet -*-
+# name: haskell
+# key: haskell
+# --
+
+#+BEGIN_SRC
+{-# LANGUAGE UnicodeSyntax #-}
+
+main = do
+  putStrLn ":D"$0
+#+END_SRC

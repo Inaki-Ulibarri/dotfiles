@@ -1,0 +1,6 @@
+let sqsum :: Int -> Int
+sqsum a = (a * (a+1) * (2*a+1)) `div` 6
+
+-- gaussian sum
+let gsum :: Int -> Int
+gsum a = (a * (a+1)) `div` 2

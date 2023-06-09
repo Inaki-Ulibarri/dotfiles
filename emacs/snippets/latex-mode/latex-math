@@ -1,0 +1,26 @@
+# -*- mode: snippet -*-
+# name: latex-mode
+# key: latex-math
+# --
+
+\documentclass[18pts]{article}
+
+\usepackage{amsmath, amssymb}
+\usepackage[shortlabels]{enumitem}
+\usepackage[spanish]{babel}
+\usepackage{fontspec}
+\defaultfontfeatures{Mapping=tex-text,Scale=MatchLowercase}
+\setmainfont{Vollkorn}
+\setmonofont{JuliaMono}
+
+\title{$0}
+\author{Iñaki Ulibarri Utrilla}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+\newpage
+
+\end{document}
+

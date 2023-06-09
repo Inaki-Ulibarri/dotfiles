@@ -1,0 +1,17 @@
+function factors(n::Int)
+    facts = []
+    
+    i = 1
+    while i^2 < n
+        println(i)
+        if i % n == 0
+            push!(facts, i)
+            i += 1
+        end
+    end
+
+    facts
+end
+
+println(factors(10001))
+

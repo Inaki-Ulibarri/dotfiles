@@ -1,0 +1,49 @@
+\documentclass[18pts]{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[shortlabels]{enumitem}
+\usepackage[spanish]{babel}
+
+\title{Trabajo Asíncrono}
+\author{Iñaki Ulibarri Utrilla}
+\date{\today}
+
+\begin{document}
+\maketitle
+\newpage
+
+\section{Ejercicios 15, 17 y 18, conseguir la derivada de las siguientes expresiones}
+\begin{enumerate}[(a)]
+\item $F(x) = \frac{6}{x^2 + 1}$ \newline
+  \begin{flalign*}
+    F'(x) &= \lim _ {h \to 0} \frac{F(x + h) - F(x)}{h} \\
+    &= \lim _ {h \to 0} \bigg ( \frac{6}{x^2 + 2xh + h^2 + 1} - \frac{6}{x^2 + 1} \bigg ) \div h \\
+    &= \lim _ {h \to 0} \bigg ( \frac{6(x^2 + 1) - 6(x^2 + 2xh + h^2 + 1) }{(x^2 + 2xh + h^2 + 1)(x^2 + 1)} \bigg ) \div h \\
+    &= \lim _ {h \to 0} \bigg ( \frac{6x^2 + 6 - 6x^2 - 12xh - 6h^2 - 6}{x^4 + 2x^3h + x^2h^2 + 2x^2 + 2xh + h^2 + 1} \bigg ) \div h \\
+    &= \lim _ {h \to 0} \frac{-12 xh - 6h^2}{h(x^2 + 1)^2} \\
+    &= \frac{-12x}{(x^2 + 1)^2}
+  \end{flalign*}
+  
+\item $G(x) = \frac{2x - 1}{x - 4}$
+  \begin{flalign*}
+    G'(x) &= \lim _ {h \to 0} \bigg (\frac{2(x+h) - 1}{x+h -4} - \frac{2x - 1}{x - 4} \bigg ) \div h \\
+    &= \lim _ {h \to 0} \bigg ( \frac{2x+2h-1}{x+h-4} - \frac{2x - 1}{x - 4} \bigg ) \div h \\
+    &= \lim _ {h \to 0} \bigg ( \frac{(2x+2h-1)(x - 4) - (2x - 1)(x+h-4)}{(x+h-4)(x-4)} \bigg ) \div h \\
+    &= \lim _ {h \to 0} \bigg ( \frac{2x^2 + 2xh - x - 8x - 4h + 4 - 2x^2 - 2xh + 8x + x + h - 4}{x^2 + xh -4x -4x-4h+16} \bigg ) \div h \\
+    &= \lim _ {h \to 0} \bigg ( \frac{-7h}{x^2 + xh -8x - 4h + 16} \bigg ) \div h \\
+    &= \lim _ {h \to 0} \frac{-7h}{x^2h - 8xh + 16h} \\
+    &= \frac{-7}{(x-4)^2}
+  \end{flalign*}
+\item $H(x) = \frac{2x}{x^2 - x}$
+  \begin{flalign*}
+    H'(x) &= \lim _ {h \to 0} \bigg ( \frac{2(x+h)}{(x+h)^2 - (x+h)} - \frac{2x}{x^2 - x} \bigg ) \div h \\
+    &= \lim _ {h \to 0} \bigg ( \frac{2x+2h}{x^2 + 2xh +h^2 - x - h} - \frac{2x}{x^2 - x} \bigg ) \div h \\
+    &= \lim _ {h \to 0} \bigg ( \frac{(2x + 2h)(x^2 - x) - 2x(x^2 + 2xh +h^2 - x - h)}
+    {(x^2 + 2xh +h^2 - x - h)(x^2 - x)} \bigg ) \div h \\
+    &= \lim _ {h \to 0} \frac{-2h}{h(x^4 - 2x^2 + 1)} \\
+    &= \frac{-2}{(x-1)^2}
+  \end{flalign*}
+\end{enumerate}
+
+
+\end{document}

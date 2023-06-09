@@ -1,0 +1,26 @@
+{-# LANGUAGE UnicodeSyntax #-}
+-- Funky syntax
+fact :: Integer -> Integer
+fact 0 = 1
+fact n = n * fact (n-1)
+
+factorials n = [fact x| x <- [1..n]]
+
+
+-- Haskell has a unicode extension \(^_^)/
+gcd' ∷ Integer → Integer → Integer
+gcd' a 0 = a
+gcd' a b = gcd b (a `mod` b)
+
+bmi ∷ (Fractional a, Ord a) ⇒ a → a → String
+bmi weight height 
+  | bmi' <= 18.5 = "You're a skinny emo!"
+  | bmi' <= 25.0 = "You may be normal, but you're still ugly"
+  | bmi' <= 30.0 = "Fatso, haha!"
+  | otherwise                 = "TLC wants to make a documentary on you"
+  where bmi' = weight / height ^ 2
+    
+max' ∷ (Ord a) ⇒ a → a → a
+max'
+  | a > b     = a
+  | otherwise = b

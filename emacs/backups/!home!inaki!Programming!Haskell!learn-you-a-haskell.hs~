@@ -1,0 +1,154 @@
+{-# LANGUAGE NumericUnderscores #-}
+module Learn where
+import qualified Data.List as L
+
+-- Funky syntax with language extensions, some for unicode syntax
+-- others for numerical underscores
+fact :: Integer -> Integer
+fact 0 = 1
+fact n = n * fact (n-1)
+
+factorials n = [fact x| x <- [1..n]]
+
+gcd' :: Integer -> Integer -> Integer
+gcd' a 0 = a
+gcd' a b = gcd b (a `mod` b)
+
+bmi :: (Fractional a, Ord a) => a -> a -> String
+bmi weight height 
+  | bmi' <= skinny = "You're a skinny emo!"
+  | bmi' <= normal = "You may be normal, but you're still ugly"
+  | bmi' <= fatso  = "Fatso, haha!"
+  | otherwise      = "TLC wants to make a documentary on you"
+  where bmi' = weight / height^2
+        (skinny, normal, fatso) = (18.5, 25.0, 30.0)
+
+bmiList :: (Fractional a, Ord a) => [(a, a)] -> [a]
+bmiList xs = [bmi | (w, h) <- xs, let bmi = w / h^2]
+  -- where bmi weight height = weight / height^2
+  -- `let` is an expression, `where` is a syntax construct
+
+describeList :: [a] -> String
+describeList xs = "The list is " ++ what xs
+  where what []     = "an empty list"
+        what [x]    = "a singleton"
+        what xs     = "a list"
+
+quickSort :: (Ord a) => [a] -> [a]
+quickSort [] = []
+quickSort (x:xs) =
+  let small = quickSort $ filter (<= x) xs
+      big   = quickSort $ filter (>x) xs
+  in small ++ [x] ++ big
+  
+applyTwice :: (a -> a) -> a -> a
+applyTwice f x = f $ f x
+
+-- reapplication of a std library function
+zipWith' :: (a -> b -> c) -> [a] -> [b] -> [c]
+zipWith' _ [] _ = []
+zipWith' _ _ [] = []
+zipWith' f (x:xs) (y:ys) = f x y : zipWith' f xs ys
+
+flip' :: (a -> b -> c) -> (b -> a -> c)
+flip' f a b = f b a
+
+filter' :: (a -> Bool) -> [a] -> [a]
+filter' _ [] = []
+filter' s (t:ts)
+  | s t = t: filter' s ts
+  | otherwise = filter s ts
+
+
+g :: Int
+g = head $ filter p [100_000, 99_999..]
+  where p x = x `mod` 8517 == 0 
+
+collatz :: (Integral a) => a -> [a]
+collatz 1 = [1]
+collatz n
+  | even n = n: collatz (n `div` 2)
+  | otherwise = n: collatz (3*n + 1)
+
+collatzMuh :: Int -> Int -> Int
+collatzMuh n m = length $ filter (\xs -> length xs >= m) $ map collatz [1..n]
+{-- lambda functions are used and trown away, no need to reuse what
+    will only be used once
+ --}
+
+listMult = map (*) [0..] -- partially applied funtion
+
+shittyMap :: (a -> b) -> [a] -> [b]
+shittyMap f xs = foldr (\x acc -> f x:acc) [] xs
+
+shittySum :: (Num a) => [a] -> a
+shittySum =  (foldl (\acc x -> x+acc) 0)
+
+sqrtSum :: Int
+sqrtSum = (1+) $ length $ takeWhile (<1_000) $ scanl1 (+) $ map sqrt [1..]
+
+identity :: Float -> Float
+identity = ((^2) . negate . sqrt)
+
+oddSquareSum :: Int -> Int
+oddSquareSum n = sum . takeWhile (<n) . filter odd . map (^2) $ [1..]
+{-- oddSquareSum n = -- more readable, but it gets the point of composition through
+     let oddSqrs = filter odd . map (^2) $ [1..]
+         limit = takeWhile (<n) oddSqrs
+     in sum limit
+--}
+
+takePows :: Int -> Int -> [Int]
+takePows n m = take m $ L.iterate (*n) 1
+{-- functions in modules are loaded like C headers
+    and function like any other module system, exceptions
+    and explicit import can be done like this
+        import Data.List (nub, sort)  -- specific import
+        import Data.List hiding (nub) -- apartheid of functions
+--}
+
+data Point = Point Float Float deriving (Show, Eq)
+data Shape = Circle Point Float | Rectangle Point Point deriving (Show, Eq)
+{- automagically derive the show type for these, all the elements
+   that conform the type need to be defined in the typeclass that
+   is being derived
+-}
+data Book = Book { title :: String
+                 , author :: String
+                 , publisher :: String
+                 , pDate :: Int
+                 } deriving (Eq, Show, Read)
+{- Record declaration for haskell, functions to getn
+   automagically created to retrieve individual fields
+-}
+data Quotient a b = Quotient { num :: a
+                             , den :: b
+                             } deriving (Show, Eq)
+{- Records can have type parameters to determine their types
+   to make them more general
+-}
+
+surface :: Shape -> Float
+surface (Circle _ r) = pi * r^2
+surface (Rectangle (Point x1 y1) (Point x2 y2)) =
+         abs $ (x2 - x1) * (y2 - y1)
+
+showBook :: Book -> String
+showBook (Book t a p d) =
+  t ++ " was written by " ++ a ++ " in " ++ (show d) ++ " and was published by " ++ p
+       
+sumQuots :: (Num a) => (Quotient a a) -> (Quotient a a) -> (Quotient a a)
+sumQuots (Quotient a b) (Quotient c d) =
+  (Quotient ((a*d) + (b*d)) (b*d))
+
+{- Types with the proper typeclasses can be sent into general functions that
+   support them, for example:
+   filter (\(Point a b) -> a >= 10)
+   [(Point 8 1), (Point 9 2), (Point 10 3), (Point 11 4)]
+-}
+
+data FrenchDays = Lundi | Mardi | Mercredi | Jeudi | Vendredi | Samedi | Dimanche
+  deriving (Show, Read, Eq, Enum, Ord, Bounded)
+
+type FrenchWeek = [(minBound FrenchDays) .. (maxBound FrenchDays)] 
+

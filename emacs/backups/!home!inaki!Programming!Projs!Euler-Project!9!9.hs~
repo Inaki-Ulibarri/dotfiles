@@ -1,0 +1,23 @@
+{-# LANGUAGE UnicodeSyntax #-}
+
+ptriple ∷ Int → Int → (Int, Int, Int)
+ptriple m n =
+  (m^2-n^2, 2*m*n, m^2+n^2)
+
+plist = [ptriple a b | a ← [1..], b ← [1..a-1]]
+
+psums ∷ (Int, Int, Int) → Int → Bool
+psums (a,b,c) upto =
+  if upto `mod` (a+b+c) == 0
+  then True
+  else False
+
+solve a =
+  (\(x,y,z) → let k = a `div` (x+y+z)
+              in k^3*x*y*z)
+  $ head
+  $ filter (\x → psums x a) plist
+
+main = do
+  print (solve 1000)
+

@@ -1,0 +1,16 @@
+#include <stdio.h>
+
+double
+mult(double foo, double * bar) {
+        return foo*(*bar);
+}
+
+int
+main() {
+        double a = 1.2;
+        double b = 5.0;
+        double * c = &b;
+
+        printf("mult(%lf, %lf) = %lf\n",
+               a, *c, mult(a, x));
+}

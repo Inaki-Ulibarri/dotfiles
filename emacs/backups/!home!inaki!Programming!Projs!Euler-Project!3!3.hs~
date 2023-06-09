@@ -1,0 +1,26 @@
+isPalindrome :: Int -> Bool
+isPalindrome a =
+  fdigs == ldigs
+  where
+    d = digits a
+    l = length d
+    fdigs = take (l `div` 2) d
+    tmp   = reverse $ drop (l `div` 2) d
+    ldigs = if length fdigs < length tmp
+            then init tmp
+            else tmp
+         
+digits :: Int -> [Int]
+digits a
+  | a == 0 = [0]
+  | otherwise = 
+    if last lst == 0
+    then init lst
+    else lst
+  where
+    d n
+      | n == 0 = [0] 
+      | otherwise = (n `mod` 10) : d ((n - n `mod` 10) `div` 10)
+    lst = d a
+
+-- compute =

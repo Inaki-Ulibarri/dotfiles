@@ -1,0 +1,30 @@
+function smul(x)
+    sm = 1
+    m = [] # multiples
+    
+    for k ∈ 1:x
+        if sm % k != 0
+            push!(m, k)
+            sm *= k
+        end
+    end
+
+    for k₁ in m
+        r = sm ÷ k₁
+        canred =  true
+        for k₂ in 1:x
+            if r % k₂ != 0
+                canred = false
+                break
+            end
+        end
+        if canred
+            sm ÷= k₁
+        end
+    end
+    @show rm
+
+    return sm
+end
+
+@show smul(20)

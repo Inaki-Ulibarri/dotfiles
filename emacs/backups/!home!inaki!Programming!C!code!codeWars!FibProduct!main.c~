@@ -1,0 +1,43 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <criterion/criterion.h>
+
+#define MAX_STR_SZ 128
+
+typedef unsigned long long ull;
+ull * productFib(ull prod);
+
+char * array2StringULongLong(ull* array, int sz)
+{
+  char * s = calloc(MAX_STR_SZ, sizeof(char) * MAX_STR_SZ);
+
+  snprintf(s, MAX_STR_SZ, "%llu, %llu, %llu",
+           array[0], array[1], array[2]);
+
+  return s;
+}
+
+Test(array2StringULongLong, ShouldPassAllTheTestsProvided)
+{
+  char * ln = array2StringULongLong([0, 0, 0], 3);
+  cr_assert_str_eq("0, 0, 0", ln);
+  free(ln); ln = NULL;
+}
+
+void dotest(ull n, char *expr)
+{
+  ull* act = productFib(n);
+  char* sact = array2StringULongLong(act, 3);
+  if(strcmp(sact, expr) != 0)
+    printf("step. Error. Expected %s\n but got %s\n", expr, sact);
+  cr_assert_str_eq(sact, expr, "");
+  free(sact); sact = NULL;
+}
+
+Test(productFib, ShouldPassAllTheTestsProvided)
+{
+  dotest(4895, "55, 89, 1");
+  dotest(5895, "89, 144, 0");
+  dotest(74049690, "6765, 10946, 1");
+}

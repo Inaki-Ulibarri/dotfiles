@@ -1,0 +1,169 @@
+\documentclass[18pts]{article}
+\usepackage[spanish]{babel}
+\usepackage{gfsartemisia}
+\usepackage[T1]{fontenc}
+\title{Trabajo Asíncrono}
+\author{Iñaki Ulibarri Utrilla}
+\date{\today}
+
+\begin{document}
+\maketitle
+\newpage
+
+\section{Tablas de verdad}
+\begin{enumerate}
+
+\item $\neg [(p \lor q) \land (\neg q \rightarrow \neg p)]$
+  \newline
+  \begin{tabular}{|c|c|c|c|c|}
+    \hline
+    p & q & $p \lor q$ & $\neg p \rightarrow \neg q$
+    & $\neg [(p \lor q) \land (\neg q \rightarrow \neg p)]$ \\ \hline
+    v & v & v  &  v & f \\ \hline
+    v & f & v  &  v & f \\ \hline
+    f & v & v  &  f & v \\ \hline
+    f & f & f  &  v & v \\ \hline
+  \end{tabular}
+
+\item $[ (p \rightarrow q) \land (q \rightarrow r) ] \rightarrow (p \rightarrow r)$
+  \newline
+  \begin{tabular}{|c|c|c|c|c|c|c|c|}
+    \hline
+    p & q & r & $p \rightarrow q$ & $q \rightarrow r$ & $p \rightarrow q \land q \rightarrow r $
+    & $p \rightarrow r$ &  $[ (p \rightarrow q) \land (q \rightarrow r) ] \rightarrow (p \rightarrow r)$\\
+    \hline
+    v & v & v & v & v & v & v  & v \\ \hline
+    v & v & f & v & f & f & f  & v \\ \hline
+    v & f & v & f & v & f & v  & v \\ \hline
+    v & f & f & f & v & f & f  & v \\ \hline
+    f & v & v & v & v & v & v  & v \\ \hline
+    f & v & f & v & f & f & v  & v \\ \hline
+    f & f & v & v & v & v & v  & v \\ \hline
+    f & f & f & v & v & v & v  & v \\ \hline
+  \end{tabular}
+
+\item $ \{[p \rightarrow (q \land r)] \land (p \land q)\} \rightarrow r$
+  \newline
+  \begin{tabular}{|c|c|c|c|c|c|c|}
+    \hline
+    p & q & r & $p \rightarrow (q \land r)$ & $[p \rightarrow (q \land r)] \land (p \land q)$ &
+    $\{[p \rightarrow (q \land r)] \land (p \land q)\} \rightarrow r$\\
+    \hline
+    v & v & v & v & v & v\\ \hline
+    v & v & f & f & f & v\\ \hline
+    v & f & v & f & f & v\\ \hline
+    v & f & f & f & f & v\\ \hline
+    f & v & v & v & f & v\\ \hline
+    f & v & f & v & f & v\\ \hline
+    f & f & v & v & f & v\\ \hline
+    f & f & f & v & f & v\\ \hline
+  \end{tabular}
+
+\item $[p \rightarrow ( \neg r \lor r)] \iff [ ( q \rightarrow s) \land (q \land \neg s) ]$
+  \newline
+  \begin{tabular}{|c|c|c|c|c|c|c|}
+    \hline
+    p & q & r & s & $p \rightarrow (\neg r \lor r)$ & $(q \rightarrow s) \land (q \land \neg s)$
+    & $[p \rightarrow ( \neg r \lor r)] \iff [ ( q \rightarrow s) \land (q \land \neg s)]$ \\ \hline
+    v & v & v & v &  v  & f & f  \\ \hline
+    v & v & v & f &  v  & f & f  \\ \hline
+    v & v & f & v &  v  & f & f  \\ \hline
+    v & v & f & f &  v  & f & f  \\ \hline
+    v & f & v & v &  v  & f & f  \\ \hline
+    v & f & v & f &  v  & f & f  \\ \hline
+    v & f & f & v &  v  & f & f  \\ \hline
+    v & f & f & f &  v  & f & f  \\ \hline
+    f & v & v & v &  v  & f & f  \\ \hline
+    f & v & v & f &  v  & f & f  \\ \hline
+    f & v & f & v &  v  & f & f  \\ \hline
+    f & v & f & f &  v  & f & f  \\ \hline
+    f & f & v & v &  v  & f & f  \\ \hline
+    f & f & v & f &  v  & f & f  \\ \hline
+    f & f & f & v &  v  & f & f  \\ \hline
+    f & f & f & f &  v  & f & f  \\ \hline
+  \end{tabular}
+\end{enumerate}
+
+\section{Propocisiones y determinación de su tipo.}
+\begin{enumerate}
+\item César es profesor o César es alumno y es falso que César sea profesor y César sea alumno.
+  \newline
+  p = `César es un profesor`  \newline
+  q = `César es un alumno`    \newline
+  $ (p \lor q) \land \neg (p \land q) $ \newline
+  \begin{tabular}{|c|c|c|c|c|c|}
+    \hline
+    p & q & $p \lor q$ & $\neg (p \land q)$ & $ (p \lor q) \land \neg (p \land q) $ \\ \hline
+    v & v & v & f & f \\ \hline
+    v & f & v & v & v \\ \hline
+    f & v & v & v & v \\ \hline
+    f & f & f & v & f \\ \hline
+  \end{tabular}
+  Propocisión contingente.
+  
+\item No me acuerdo, y si no me acuerdo, no pasó. Lo anterior implica que no pasó.
+  \newline
+  p = `No me acuerdo` \newline
+  q = `No pasó` \newline
+  $ (\neg p \rightarrow \neg q) \land p$ \newline
+  \begin{tabular}{|c|c|c|}
+    \hline
+    p & q & $ (\neg p \rightarrow \neg q) \land p$ \\ \hline
+    v & v & v \\ \hline
+    v & f & v \\ \hline
+    f & v & f \\ \hline
+    f & f & f \\ \hline
+  \end{tabular}
+  Propocisión contingente.  
+
+\item Si $x^2-4x+3=0$, entonces: si$ x \neq 1$, entonces x=3
+  \newline
+  p = `$(x-1)(x-4)=0$` \newline
+  q = `$x \neq 1$` \newline
+  r = `$x = 3$` \newline
+  $p \iff (q \land r)$ \newline
+  \begin{tabular}{|c|c|c|c|}
+    \hline
+    p & q & r & $p \iff (q \land r)$ \\ \hline
+    v & v & v & v \\ \hline
+    v & v & f & f \\ \hline
+    v & f & v & f \\ \hline
+    v & f & f & f \\ \hline
+    f & v & v & f \\ \hline
+    f & v & f & v \\ \hline
+    f & f & v & v \\ \hline
+    f & f & f & v \\ \hline
+  \end{tabular}
+  Propocisión contingente.
+  
+\item Si obedeces a los hombres, los dioses se enojan contigo. Si obedeces a los dioses los
+  hombres se enojan contigo. O bien obedeces a los hombres o bien obedeces a los dioses. \\
+  p = `Obedeces a los dioses` \\
+  q = `Los hombres se enojan contigo` \\
+  r = `Obedeces a los hombres` \\
+  s = `Los dioses se enojan contigo` \\
+  $(p \rightarrow q) \lor (r \rightarrow s)$ \\
+  \begin{tabular}{|c|c|c|c|c|c|c|}
+    \hline
+    p & q & r & s & $p \rightarrow q$ & $r \rightarrow s$ &
+    $(p \rightarrow q) \lor (r \rightarrow s)$ \\ \hline
+    v & v & v & v &  v  &  v  & v \\ \hline
+    v & v & v & f &  v  &  f  & v \\ \hline
+    v & v & f & v &  v  &  v  & v \\ \hline
+    v & v & f & f &  v  &  v  & v \\ \hline
+    v & f & v & v &  f  &  v  & v \\ \hline
+    v & f & v & f &  f  &  f  & f \\ \hline
+    v & f & f & v &  f  &  v  & v \\ \hline
+    v & f & f & f &  f  &  v  & v \\ \hline
+    f & v & v & v &  v  &  v  & v \\ \hline
+    f & v & v & f &  v  &  f  & v \\ \hline
+    f & v & f & v &  v  &  v  & v \\ \hline
+    f & v & f & f &  v  &  v  & v \\ \hline
+    f & f & v & v &  v  &  v  & v \\ \hline
+    f & f & v & f &  v  &  f  & v \\ \hline
+    f & f & f & v &  v  &  v  & v \\ \hline
+    f & f & f & f &  v  &  v  & v \\ \hline
+  \end{tabular}
+  Propocisión contingente.
+\end{enumerate}
+\end{document}

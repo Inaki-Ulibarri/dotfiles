@@ -1,0 +1,11 @@
+# -*- mode: snippet -*-
+# name: haskell
+# key: :D
+# --
+{-# LANGUAGE NumericUnderscores#-}
+
+$0
+
+main = do
+  putStrLn ":D"
+

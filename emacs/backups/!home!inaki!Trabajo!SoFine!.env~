@@ -1,0 +1,28 @@
+# DEPLOYMENT
+STACK_NAME=sofine-backend
+
+# ECR MANAGEMENT
+DOCKER_IMAGE_BACKEND=sofine-backend
+ECR_REGISTRY=931410544451.dkr.ecr.us-east-1.amazonaws.com
+
+# SECRET MANAGER
+SERVER_ENVIRONMENT=dev
+AWS_REGION=us-east-1
+
+# BACKEND
+API_KEY_SALT=iikFbZfzChylf6CuyTDmn.
+FIRST_SUPERUSER=admin@sofine.com
+FIRST_SUPERUSER_PASSWORD=superuserP@ssw0rd
+PROJECT_NAME=sofine-backend
+BACKEND_CORS_ORIGINS=["http://localhost", "http://localhost:4200", "http://localhost:3000", "http://localhost:8080", "https://localhost", "https://localhost:4200", "https://localhost:3000", "https://localhost:8080", "https://backend.sofine.com"]
+
+# EMAILS
+SENDGRID_API_KEY=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
+EMAILS_FROM_EMAIL=info@sofine.com
+EMAIL_RECOVERY_URL=http://localhost:3000/set_password
+
+# POSTGRES
+POSTGRES_PASSWORD=postgrespassword
+POSTGRES_SERVER=db
+POSTGRES_DB=app
+POSTGRES_USER=postgres

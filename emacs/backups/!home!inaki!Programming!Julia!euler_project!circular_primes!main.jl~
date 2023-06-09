@@ -1,0 +1,57 @@
+function is_prime(n::Int)
+    if n == 2 || n == 3
+        return true
+        
+    elseif n % 2 == 0 || n == 1
+        return false
+    end
+    for i in 3:2:n
+        if n % i == 0 
+            return false
+        else i^2 > n
+            break
+        end
+    end
+    true    
+end
+
+# number of digits in a number
+function digits(x::Int)
+    digs = 1
+    while x >= 10
+        digs += 1
+        x = x ÷ 10
+    end
+    digs
+end
+
+function rotate(n::Int)
+    if n < 10
+        return n
+    end
+    num = n % 10
+    dgs = digits(n) - 1
+    ((n - num) ÷ 10) + (num * 10^dgs)
+end
+
+function is_circ_prime(n::Int)
+    arr = [n]
+    for i in 1:digits(n) - 1
+        n = rotate(n)
+        push!(arr, n)
+    end
+
+    for p in arr
+        # println(p)
+        if !(is_prime(p))
+            return false
+        end
+    end
+    true
+end
+
+for i in 1:100
+    if is_circ_prime(i)
+        println(i)
+    end
+end

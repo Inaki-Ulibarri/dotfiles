@@ -1,0 +1,14 @@
+fib :: Int -> Int
+fib a
+  | a == 1 = 1
+  | a == 2 = 1
+  | otherwise =
+    f 1 1 n
+    where
+      f a b n
+      | n <= 1 = a
+      | otherwise = f (a+b) a (n-1)
+
+-- main = do
+  
+λ> 

@@ -1,0 +1,102 @@
+# Problem 72
+
+# TODO: fix pfactors()
+
+function pfactors(n) :: Array{Int, 1}
+    facts = []
+    og = n
+
+    if n % 2 == 0
+        push!(facts, 2)
+        # push!(facts, n ÷ 2)
+        while n % 2 == 0
+            n = n ÷ 2
+        end
+    end
+    if n % 3 == 0
+        push!(facts, 3)
+        # push!(facts, n ÷ 3)
+        while n % 3 == 0
+            n = n ÷ 3
+        end
+    end
+
+    for f in 5:6:og ÷ 2
+        if n % f == 0 
+            push!(facts, f)
+            # push!(facts, n ÷ f)
+            while n % f == 0
+                n = n ÷ f
+            end
+        end
+        if n % (f + 2) == 0
+            push!(facts, f+2)
+            # push!(facts, n ÷ (f+2))
+            while n % (f+2) == 0
+                n = n ÷ (f+2)
+            end
+        end
+    end
+
+    if isempty(facts)
+        facts = [n]
+    else
+        for i in facts, j in length(facts)
+            if !(is_prime(i))
+                deleteat!(facts, j)
+            end
+        end
+    end
+    
+    println("$og: $facts")
+    facts
+end
+
+function is_prime(n :: Int) :: Bool
+    if n == 2 || n == 3 || n == 5
+        return true
+    elseif mod(n, 2) == 0 || mod(n, 3) == 0 || n <= 1
+        return false
+    end
+    
+    for i in 5:6:n
+        if mod(n, i) == 0 || mod(n, i+2) == 0
+            return false
+        elseif i^2 > n
+            return true
+        end
+    end
+
+    true
+end
+
+function totient(n)
+    mult = 1
+    for p in pfactors(n)
+        mult *= (1 - 1//p)
+    end
+
+    numerator(n * mult)
+end
+
+function rpf(d :: Int)
+    p_fracs = 0
+    for i in 1:d
+        p_fracs += totient(i)
+    end
+
+    p_fracs
+end
+
+# println("factors(10001): $(pfactors(10001))")
+# println("factors(8): $(pfactors(8))")
+# println("factors(97): $(pfactors(97)))")
+# println("factors(36): $(pfactors(36))")
+# println("factors(7): $(pfactors(7))")
+# println("factors(1174): $(pfactors(1174))")
+
+
+# println(rpf(1_000_000))
+println(rpf(100))
+
+# println(totient(2))

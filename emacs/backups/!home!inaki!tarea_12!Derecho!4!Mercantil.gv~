@@ -1,0 +1,15 @@
+digraph merc
+{
+        graph [layout = dot,
+               fontsize = 20,
+               bgcolor = aquamarine
+               ];
+        merca [label = "Derecho Mercatil"
+               fontsize = 40
+               color = coral
+               ];
+        def [label = "Rama del Derecho Privado, estudia y trata con todo lo referente al comercio" 
+             ];
+
+        
+}

@@ -1,0 +1,13 @@
+let replicate list n =
+  let rec aux lst reps todo =
+    match lst with
+    | [] -> []
+    | x :: h -> 
+       if todo > 0 then
+         x :: aux lst reps (todo-1) 
+       else
+         x :: aux h reps reps 
+  in
+  aux list n n []
+;;
+           

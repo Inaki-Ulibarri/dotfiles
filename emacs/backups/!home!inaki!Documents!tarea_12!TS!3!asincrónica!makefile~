@@ -1,0 +1,2 @@
+Asincrónica.pdf: asincrónica.org
+	pandoc Asincrónica.pdf - o asincrónica.org

@@ -1,0 +1,11 @@
+#+author: Iñaki Ulibarri Utrilla
+#+title: Trabajo Asíncrono
+#+date: 25-11-2022
+
+1. ~[(p v q) ^ (~q→~p)]
+
+2. [ (p→q)^(q→r) ] → (p→r)
+
+3. { [p → (q ^ r)] ^ (p ^ q) } → r
+
+4. [p → ( ~r v r)] ↔ [ ( q → s) ^ (q ^ ~s) ]

@@ -1,0 +1,164 @@
+;; splash screen
+(scroll-bar-mode 0)
+(tool-bar-mode 0)
+(menu-bar-mode 0)
+
+;; line numbers
+(global-display-line-numbers-mode)
+(setq display-line-numbers-type 'relative)
+(add-hook 'after-init-hook
+          'global-company-mode)
+
+      
+;; theme and font
+(set-frame-font "Julia Mono  16" t)
+(add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
+(load-theme 'zenburn t)
+
+;;splash screen
+(setq initial-buffer-choice t)
+
+;; melpa
+(require 'package)
+(add-to-list 'package-archives
+             '("melpa" . "http://melpa.org/packages/") t)
+(package-initialize)
+(require 'package)
+
+;; Dired
+(setq dired-listing-switches "-lhs --group-directories-first") ; ls
+
+;; pair-mode 
+(setq electric-pair-pairs
+      '(
+        (?\" . ?\")
+        (?\¿ . ?\?)
+        (?\{ . ?\})
+        (?\« . ?\»)
+        (?\< - ?\>)
+        ))
+
+;;;;;;;;;;;;;;;
+;; Languages ;;
+;;;;;;;;;;;;;;;
+
+
+;; C
+(c-add-style "openbsd"
+             '("bsd"
+               (c-backspace-function              . delete-backward-char)
+               (c-syntactic-indentation-in-macros . nil)
+               (c-tab-always-indent               . nil)
+               (c-hanging-braces-alist
+                (block-close                      . c-snug-do-while))
+               (c-offsets-alist
+                (arglist-cont-nonempty            . *)
+                (statement-cont                   . *))
+               (indent-tabs-mode                  . t)))
+
+(setq-default c-default-indent "gnu")
+
+;; OCaml
+(load "/home/inaki/.opam/default/share/emacs/site-lisp/tuareg-site-file")
+(autoload 'tuareg-mode "tuareg" "Major mode for editing Caml code" t)
+(autoload 'camldebug "camldebug" "Run the Caml debugger" t)
+(autoload 'tuareg-imenu-set-imenu "tuareg-imenu" ; tuareg-imenu . el is not part of in Tuareg 2.2.0,
+  "Configuration of imenu for tuareg" t)         ; so this is unlikely to work
+(put 'set-goal-column 'disabled nil)
+(put 'dired-find-alternate-file 'disabled nil)
+
+
+;;;;;;;;;;;;;;;;;
+;; keybindings ;;
+;;;;;;;;;;;;;;;;;
+(save-place-mode 1)
+
+(global-set-key (kbd "M-w") 'clipboard-kill-ring-save)
+(global-set-key (kbd "M-/") 'hippie-expand)
+(global-set-key (kbd "C-x C-b") 'ibuffer)
+(global-set-key (kbd "M-z") 'zap-to-char)
+
+(global-set-key (kbd "C-s") 'isearch-forward-regexp)
+(global-set-key (kbd "C-r") 'isearch-backward-regexp)
+(global-set-key (kbd "C-M-s") 'isearch-forward)
+(global-set-key (kbd "C-M-r") 'isearch-backward)
+(global-set-key (kbd "C-x a") 'align-regexp)
+(global-set-key (kbd "s-SPC") 'set-rectangular-region-anchor) ;multiple cursors
+ 
+(show-paren-mode 1)
+(setq-default indent-tabs-mode nil)
+(savehist-mode 1)
+(setq save-interprogram-paste-before-kill t
+      apropos-do-all t
+      mouse-yank-at-point t
+      require-final-newline t
+      load-prefer-newer t
+      backup-by-copying t
+      ediff-window-setup-function 'ediff-setup-windows-plain
+      custom-file (expand-file-name "custom.el" user-emacs-directory))
+
+(unless backup-directory-alist
+  (setq backup-directory-alist `(("." . ,(concat user-emacs-directory
+                                                 "backups")))))
+
+;; utility functions
+
+;; compiling
+;; (defun c-w-c ()
+;;   (interactive)
+;;   (call-interactively 'compile t (vector 21 (this-command-keys-vector))))
+(global-set-key (kbd "C-x w") 'compile)
+;; (put 'downcase-region 'disabled nil)
+
+;; dired sidebar
+(use-package dired-sidebar
+  :bind (("C-x C-n" . dired-sidebar-toggle-sidebar))
+  :ensure t
+  :commands (dired-sidebar-toggle-sidebar)
+  :config
+  (setq dired-theme 'nerd)
+  )
+
+;; nyan mode
+(use-package nyan-mode
+  :ensure t
+  :init (nyan-mode t)
+  :config
+  (progn (nyan-start-animation)
+         (nyan-toggle-wavy-trail)
+         )
+  )
+
+(use-package julia-mode
+  :ensure t
+  :mode ("\\.jl?\\'")
+  :interpreter ("julia")
+  )
+
+(use-package haskell-mode
+  :ensure t
+  :mode ("\\.hs?\\'")
+  :interpreter ("runhaskell" . haskell-mode)
+  :hook (haskell-mode . haskell-unicode-input-method-enable)
+  )
+
+(use-package yasnippet
+  :ensure t
+  :config
+  (setq yas-snippet-dirs '("~/.emacs.d/snippets/"))
+  (yas-global-mode 1)
+  )
+
+(use-package tex-mode
+  :ensure t
+  :mode ("\\.tex?\\'")
+  :interpreter ("xelatex" . tex-moden)
+  :hook (tex-mode . latex-preview-pane-mode)
+  )
+
+(use-package tuareg
+  :ensure t
+  :mode ("\\.ml?\\'" . tuareg-mode)
+  :interpreter ("ocamlopt" . tuareg-mode)
+  )
+

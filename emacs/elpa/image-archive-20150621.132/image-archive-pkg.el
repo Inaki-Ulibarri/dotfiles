@@ -1,0 +1,2 @@
+;;; Generated package description from image-archive-20150621.132/image-archive.el  -*- no-byte-compile: t -*-
+(define-package "image-archive" "20150621.132" "Image thumbnails in archive file with non-blocking" '((emacs "24") (cl-lib "0.5")) :commit "8d29535bd832329ffeeac780aae7aa8919af1175" :authors '(("Masahiro Hayashi" . "mhayashi1120@gmail.com")) :maintainer '("Masahiro Hayashi" . "mhayashi1120@gmail.com") :keywords '("multimedia") :url "https://github.com/mhayashi1120/Emacs-image-archive")

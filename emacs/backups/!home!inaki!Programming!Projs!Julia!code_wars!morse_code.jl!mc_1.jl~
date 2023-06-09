@@ -1,0 +1,66 @@
+using Test
+
+function decodemorse(code)
+    words = split(code, "   ")
+    res = ""
+
+    # println(words)
+    for w in words
+        res = res * word_of_morse(w) * " "
+    end
+
+    return last(res, 1) == " " ?
+        chop(res) : res
+end
+
+function word_of_morse(word)
+    chars = split(word, " ")
+    res = ""
+    
+    for n in chars
+        res = res * char_of_morse(n)
+    end
+
+    return res
+end
+
+function char_of_morse(m)
+    mc = [(".-", "A"), ("-...", "B"), ("-.-.","C"), ("-..","D"), ( ".","E"),
+          ( "..-.","F"), ("--.","G"), ("....","H"), ("..","I"), (".---", "J"),
+          ("-.-", "K") ,(".-..", "L") , ("--", "M") , ("-.", "N") , ("---", "O"),
+          (".--.", "P"), ("--.-", "Q") , (".-.", "R") , ("...", "S") , ("-", "T"),
+          ("..-", "U") , ("...-", "V") , (".--", "W") , ("-..-", "X"), ("-.--", "Y"),
+          ("--..", "Z"), ("-----", "0") , (".----", "1") , ("..---", "2") , ("...--", "3"),
+          ("....-", "4") , (".....", "5") , ("-....", "6") , ("--...", "7") , ("---..", "8"),
+          ("----.", "9"), ("...---...", "SOS") , (".-...", "&"), (".----.","'"), (".--.-.","@"), 
+          (")","-.--.-"), ("-.--.","("), ("---...",":"), ("--..--",","), ("-...-","="), 
+          ("-.-.--","!"), (".-.-.-","."), ("-....-","-"), (".-.-.","+"), (".-..-.","\""),
+          ("..--..","?"), ("-..-.","/"), ("...-..-", "\$")]
+
+    return mc[findfirst(x -> x[1] == m, mc)][2]
+end
+
+Test.@testset "decodemorse() basics" begin
+    Test.@test decodemorse(".... . -.--   .--- ..- -.. .")  == "HEY JUDE"
+    Test.@test decodemorse("-- .   --. ..- ... - .-   -.-. .... ..- .--. .- .-.   .--. .. - --- ...")  == "ME GUSTA CHUPAR PITOS"
+    Test.@test decodemorse("---.. ..- ...- -.-. ---.. .") == "8UVC8E"
+    # Test.@test decodemorse("----.  ---..  --...  -....  .....  ....-  ...--  ..---  .----  -----") == "9 8 7 6 5 4 3 2 1 0"
+end
+
+Test.@testset "char_of_morse() basics" begin
+    Test.@test char_of_morse(".-")    == "A"
+    Test.@test char_of_morse("-...")  == "B"
+    Test.@test char_of_morse("--..")  == "Z"
+    Test.@test char_of_morse("-----") == "0"
+    Test.@test char_of_morse("....-") == "4"
+    Test.@test char_of_morse("...---...") == "SOS"
+    Test.@test char_of_morse("-...-") == "="
+    
+end
+
+Test.@testset "word_of_morse() basics" begin
+    Test.@test word_of_morse(".... --- .-.. .-") == "HOLA"
+    Test.@test word_of_morse("-.-. .- .-.. -.-. . - .. -.") == "CALCETIN"
+    Test.@test word_of_morse("..- .-. ..- --. ..- .- -.--") == "URUGUAY"
+end
+

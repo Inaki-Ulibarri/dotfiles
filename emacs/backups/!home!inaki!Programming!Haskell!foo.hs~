@@ -1,0 +1,5 @@
+main :: IO ()
+main =
+  show foo
+  where foo = map (+3) [1..10]
+        

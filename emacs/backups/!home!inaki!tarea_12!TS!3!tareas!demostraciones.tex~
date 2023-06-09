@@ -1,0 +1,66 @@
+\documentclass{article}
+
+\usepackage[spanish]{babel}
+\usepackage{amsmath, amssymb, amsthm}
+\newtheorem{theorem}{Teorema}
+\newtheorem{prop}{Proposición}
+\usepackage[T1]{fontenc}
+
+\title{Demostraciones D}
+\date{\today}
+\author{Iñaki Ulibarri Utrilla}
+
+\begin{document}
+\maketitle{}
+\newpage
+
+%% problema 1
+\begin{theorem}[Problema 1]
+  $\frac{n^3 + (n+1)^3 + (n+2)^3}{9} \in \mathbb{N} : n \in \mathbb{N}$
+\end{theorem}
+\begin{proof}
+  Por inducción, podemos probar que:
+  \[ \frac{1^3 + (1+1)^3 + (1+2)^3}{9} \]
+
+  Para los números general $k$ y $k+1$ en los naturales, tenemos que:
+  \begin{align*} 
+    &\frac{k^3 + (k+1)^3 + (k+2)^3}{9} \\
+    &= \frac{3k^3 + 9k^2 + 15k + 9}{9} \tag{Para $n = k \in \mathbb N$}\\
+    & \frac{(k+1)^3 + (k+2)^3 + (k+3)^3}{9} \\
+    &= \frac{3k^3 + 18k^2 + 42k + 36}{9}  \tag{Para n = k+1} \\
+  \end{align*}
+  Sumando a la expresión del número $k$ tenemos que:
+  \begin{align*}
+    &\frac{3k^3 + 9k^2 + 15k + 9}{9} + \frac{9(2k^2 + 3k + 3)}{9} \tag{Lo expresión que se suma siempre será un número natural}\\
+    &= \frac{3k^3 + 18k^2 + 42k + 36}{9} \\
+    &= \frac{(k+1)^3 + (k+2)^3 + (k+3)^3}{9} \in \mathbb{N}
+  \end{align*}
+  Con ésto, vemos que las expresiones para $k$ y $k+1$ están en los naturales para 
+  cualquier sucesor de 1, y por tanto, probamos por inducción regular la expresión para todos los naturales. 
+\end{proof}
+
+%% Problema 2
+\begin{theorem}[Problema 2]
+  $x - y | x^n - y^n : n \in \mathbb{N}$
+\end{theorem}
+\begin{proof}
+  %% propocisión base para la resolución
+  \begin{prop}{Notación de múltiplos} \\
+    $a | b \implies b = ac : c \in \mathbb{N}$ \\
+  \end{prop}
+  Por inducción, podemos probar que:
+  \[ x - y | x^1 - y^1 \tag{Para n = 1 } \] 
+  Para los números naturales $m$ y $m+1$, tenemos que:
+  \begin{align*}
+    (x - y) &| (x^m - y^m) = \sum_{k=0}^{n}x^ky^{n-k} \\
+    (x - y) &| (x^{m+1} - y^{m+1}) = \sum_{k=0}^{n+1}x^ky^{n-k} \\
+  \end{align*}
+  De la expresión para $m$, podemos factorizar $(x-y)$ de la siguiente forma.
+  \[ x^m - y^m = \sum_{k=0}^{m-1}x^ky^{m-k}\]
+  Similarmente para $m+1$, probamos que:
+  \[ x^{m+1} - y^{m+1} = (x - y)\sum_{k=0}^{m}x^ky^{m-k}\]
+  Similarmente que con el teorema 1, probamos que la expresión está definida para todos
+  los sucesores de 1, y por tanto todos los números naturales.
+\end{proof}
+
+\end{document}

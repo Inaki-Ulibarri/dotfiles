@@ -1,0 +1,47 @@
+# function coin_sums()
+#     upto = 20
+#     mlts = [0, 0, upto]
+#     # [* 10$, * 5$, * 1$]
+#     sums = 0
+#     while mlts[1] * 10 < upto
+#         print(mlts)
+#         mlts[2] += 1
+#         mlts[3] = upto - (mlts[1] * 10) - (mlts[2] * 5)
+#         if mlts[3] < 0
+#             mlts[1] += 1
+#             mlts[2] = 0
+#             mlts[3] = upto - (mlts[1] * 10)
+#         end
+#         println(mlts)
+#         sums += 1
+#     end
+#     println("------------\n$sums")
+# end
+
+function next_sum(a, b, c, upto)
+    b = b + 1
+    c = upto - (a*10 + b*5)
+    if c < 0
+        a += 1
+        b = 0
+        c = upto - a*10
+    end
+    return [a, b, c]
+end
+
+function coin_sums()
+    upto = 20
+    mlts = [0, 0, 0, upto]
+    # [* 10$, * 5$, * 2$, * 1$]
+    sums = 0
+    while mlts[1] * 10 < upto
+        print(mlts)
+        mlts = next_sum(mlts[1], mlts[2], mlts[3], upto)
+        println(mlts)
+        sums += 1
+    end
+    println("------------\n$sums")
+end
+
+coin_sums()
+

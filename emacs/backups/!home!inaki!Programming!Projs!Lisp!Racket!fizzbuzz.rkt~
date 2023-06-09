@@ -1,0 +1,6 @@
+#lang racket
+
+(define (fizzbuzz n)
+  (cond
+    [(zero? (modulo n 3))]))
+  

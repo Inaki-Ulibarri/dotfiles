@@ -1,0 +1,174 @@
+;; splash screen
+(scroll-bar-mode 0)
+(tool-bar-mode 0)
+(menu-bar-mode 0)
+
+;; line numbers
+(global-display-line-numbers-mode)
+(setq display-line-numbers-type 'relative)
+(add-hook 'after-init-hook
+          'global-company-mode)
+
+      
+;; theme and font
+(set-frame-font "Julia Mono  16" t)
+(add-to-list 'custom-theme-load-path "~/.config/emacs/themes/")
+(load-theme  'base16-tokyo-city-terminal-dark t)
+
+;;splash screen
+(setq initial-buffer-choice t)
+
+;; melpa
+(require 'package)
+(add-to-list 'package-archives
+             '("melpa" . "http://melpa.org/packages/") t)
+(package-initialize)
+(require 'package)
+
+;; Dired
+(setq dired-listing-switches "-lhs --group-directories-first") ; ls
+
+;; pair-mode
+(electric-pair-mode t)
+(setq electric-pair-pairs
+      '(
+        (?\" . ?\")
+        (?\¿ . ?\?)
+        (?\{ . ?\})
+        (?\« . ?\»)
+        ))
+
+;;;;;;;;;;;;;;;;;
+;; keybindings ;;
+;;;;;;;;;;;;;;;;;
+(save-place-mode 1)
+
+(global-set-key (kbd "M-w") 'clipboard-kill-ring-save)
+(global-set-key (kbd "M-/") 'hippie-expand)
+(global-set-key (kbd "C-x C-b") 'ibuffer)
+(global-set-key (kbd "M-z") 'zap-to-char)
+
+(global-set-key (kbd "C-s") 'isearch-forward-regexp)
+(global-set-key (kbd "C-r") 'isearch-backward-regexp)
+(global-set-key (kbd "C-M-s") 'isearch-forward)
+(global-set-key (kbd "C-M-r") 'isearch-backward)
+(global-set-key (kbd "C-x a") 'align-regexp)
+(global-set-key (kbd "s-SPC") 'set-rectangular-region-anchor) ;multiple cursors
+ 
+(show-paren-mode 1)
+(setq-default indent-tabs-mode nil)
+(savehist-mode 1)
+(setq save-interprogram-paste-before-kill t
+      apropos-do-all t
+      mouse-yank-at-point t
+      require-final-newline t
+      load-prefer-newer t
+      backup-by-copying t
+      ediff-window-setup-function 'ediff-setup-windows-plain
+      custom-file (expand-file-name "custom.el" user-emacs-directory))
+
+(unless backup-directory-alist
+  (setq backup-directory-alist `(("." . ,(concat user-emacs-directory
+                                                 "backups")))))
+(global-set-key (kbd "C-x w") 'compile)
+
+
+;; dired sidebar
+(use-package dired-sidebar
+  :bind (("C-x C-n" . dired-sidebar-toggle-sidebar))
+  :ensure t
+  :commands (dired-sidebar-toggle-sidebar)
+  :config
+  (setq dired-theme 'nerd)
+  )
+
+;; nyan mode
+(use-package nyan-mode
+  :ensure t
+  :init (nyan-mode t)
+  :config
+  (progn (nyan-start-animation)
+         (nyan-toggle-wavy-trail)
+         )
+  )
+
+
+;;;;;;;;;;;;;;;
+;; Languages ;;
+;;;;;;;;;;;;;;;
+
+(defun compile-file (comp)
+  (setq compile-command (format "%s %s" comp (buffer-file-name)))
+  )
+
+;; C
+(use-package c-mode
+  :ensure nil
+  :mode (("\\.c?\\'" . c-mode)
+         ("\\.h?\\'" . c-mode))
+  :config
+  (setq-default c-default-indent "gnu")
+)
+
+
+;; Julia
+(use-package julia-mode
+  :ensure t
+  :mode ("\\.jl?\\'")
+  :interpreter ("julia")
+  :config
+  (compile-file "julia")
+  )
+
+;; Haskell
+(defun haskell/ps ()
+  "Pretty Haskell pretty symbols for prettify-symbols-alist"
+  (interactive)
+  (setq prettify-symbols-alist 
+        '(("->" . "→")
+          ("<-" . "←")
+          ("=>" . "⇒")
+          (" . " . " ⋅ ")
+          ("==" . "≡")
+          ("/=" . "≠")
+          ("==" . "≡")
+          ("<=" . "≤")
+          (">=" . "≥")
+          ("&&" . "∧")
+          ("||" . "∨")
+          ("not". "¬")
+          ("::" . "∷"))
+        )
+  (prettify-symbols-mode 1)
+  )
+
+(use-package haskell-mode
+  :ensure t
+  :mode "\\.hs?\\'"
+  :hook (haskell-mode . haskell/ps)
+  :config
+  (compile-file "runhaskell")
+  )
+  
+(use-package yasnippet
+  :ensure t
+  :config
+  (setq yas-snippet-dirs '("~/.config/emacs/snippets/"))
+  (yas-global-mode 1)
+  )
+
+;; Tex
+(use-package tex-mode
+  :ensure t
+  :mode ("\\.tex?\\'")
+  :interpreter ("xelatex" . tex-mode)
+  :hook (tex-mode . latex-preview-pane-mode)
+  )
+
+;; OCaml 
+(use-package tuareg
+  :ensure t
+  :mode ("\\.ml?\\'" . tuareg-mode)
+  :config (compile-file "ocamlopt")
+  )
+

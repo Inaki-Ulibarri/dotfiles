@@ -1,0 +1,12 @@
+function smul(x)
+    sm = 1
+    for k ∈ 1:x
+        if sm % k != 0
+            sm *= k
+        end
+    end
+
+    return sm
+end
+
+@show smul(10)
